@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FittingRoom">
-        android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:name=".FinishFirstSurveyActivity"></activity>
+        <activity android:name=".FirstSurveyActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

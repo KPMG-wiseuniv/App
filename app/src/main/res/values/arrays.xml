@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Big">
+        <item>거실</item>
+        <item>침실</item>
+        <item>서재</item>
+        <item>주방</item>
+        <item>드레스룸</item>
+        <item>욕실</item>
+        <item>키즈</item>
+    </string-array>
+    <string-array name="EngBig">
+        <item>Livingroom</item>
+        <item>Bedroom</item>
+        <item>Studyroom</item>
+        <item>Kitchen</item>
+        <item>Walk-in closet</item>
+        <item>Washroom</item>
+        <item>For Kids</item>
+    </string-array>
+    <string-array name="Middel1">
+        <item>가전</item>
+        <item>가구</item>
+        <item>반려동물</item>
+    </string-array>
+    <string-array name="EngMiddel1">
+        <item>Home Appliance</item>
+        <item>Furniture</item>
+        <item>For pets</item>
+    </string-array>
+    <string-array name="Middel2">
+        <item>가전</item>
+        <item>가구</item>
+        <item>조명</item>
+    </string-array>
+    <string-array name="EngMiddel2">
+        <item>Home Appliance</item>
+        <item>Furniture</item>
+        <item>Lighting</item>
+    </string-array>
+    <string-array name="Middel3">
+        <item>가구</item>
+        <item>조명</item>
+    </string-array>
+    <string-array name="EngMiddel3">
+        <item>Furniture</item>
+        <item>Lighting</item>
+    </string-array>
+    <string-array name="Small1">
+        <item>빔/프로젝터</item>
+        <item>TV</item>
+        <item>스피커/라디오</item>
+        <item>턴테이블/CDP</item>
+        <item>가습기</item>
+        <item>공기청정기</item>
+        <item>제습기</item>
+        <item>선풍기</item>
+        <item>에어컨</item>
+    </string-array>
+    <string-array name="EngSmall1">
+        <item>Beam Projector</item>
+        <item>TV</item>
+        <item>Speaker/Radio</item>
+        <item>Turntable/CDP</item>
+        <item>Humidifier</item>
+        <item>Air cleaner</item>
+        <item>Dehumidifier</item>
+        <item>Electric fan</item>
+        <item>Air conditioner</item>
+    </string-array>
+    <string-array name="Small2">
+        <item>소파</item>
+        <item>거실장</item>
+        <item>소가구</item>
+        <item>거실조명</item>
+        <item>스탠드</item>
+        <item>무드등/장식조명</item>
+    </string-array>
+    <string-array name="EngSmall2">
+        <item>Sofa</item>
+        <item>Livingroom dresser</item>
+        <item>Small Furniture</item>
+        <item>Lighting</item>
+        <item>Desk Lamp</item>
+        <item>Mood Lamp</item>
+    </string-array>
+    <string-array name="Small3">
+        <item>리빙</item>
+    </string-array>
+    <string-array name="EngSmall3">
+        <item>Living</item>
+    </string-array>
+    <string-array name="Small4">
+        <item>스피커/라디오</item>
+        <item>턴테이블/CDP</item>
+        <item>가습기</item>
+        <item>공기청정기</item>
+        <item>제습기</item>
+        <item>선풍기</item>
+    </string-array>
+    <string-array name="EngSmall4">
+        <item>Speaker/Radio</item>
+        <item>Turntable/CDP</item>
+        <item>Humidifier</item>
+        <item>Air cleaner</item>
+        <item>Dehumidifier</item>
+        <item>Electric fan</item>
+    </string-array>
+    <string-array name="Small5">
+        <item>침대</item>
+        <item>매트리스</item>
+        <item>화장대/콘솔/스툴</item>
+        <item>협탁</item>
+        <item>서랍장</item>
+        <item>거울</item>
+    </string-array>
+    <string-array name="EngSmall5">
+        <item>Bed</item>
+        <item>Mattress</item>
+        <item>Dressing table</item>
+        <item>Side table</item>
+        <item>Drawer</item>
+        <item>Mirror</item>
+    </string-array>
+    <string-array name="Small6">
+        <item>방조명</item>
+        <item>스탠드</item>
+        <item>무드등/장식조명</item>
+    </string-array>
+    <string-array name="EngSmall6">
+        <item>Room lighting</item>
+        <item>Desk Lamp</item>
+        <item>Mood Lamp</item>
+    </string-array>
+    <string-array name="Small7">
+        <item>스피커/라디오</item>
+        <item>턴테이블/CDP</item>
+        <item>가습기</item>
+        <item>공기청정기</item>
+        <item>제습기</item>
+        <item>선풍기</item>
+    </string-array>
+    <string-array name="EngSmall7">
+        <item>Speaker/Radio</item>
+        <item>Turntable/CDP</item>
+        <item>Humidifier</item>
+        <item>Air cleaner</item>
+        <item>Dehumidifier</item>
+        <item>Electric fan</item>
+    </string-array>
+    <string-array name="Small8">
+        <item>책상</item>
+        <item>책장</item>
+        <item>의자</item>
+        <item>수납용품</item>
+    </string-array>
+    <string-array name="EngSmall8">
+        <item>Desk</item>
+        <item>Bookshelf</item>
+        <item>Chair</item>
+        <item>Storage supplies</item>
+    </string-array>
+    <string-array name="Small9">
+        <item>방조명</item>
+        <item>스탠드</item>
+    </string-array>
+    <string-array name="EngSmall9">
+        <item>Room lighting</item>
+        <item>Desk Lamp</item>
+    </string-array>
+    <string-array name="Small10">
+        <item>냉장고</item>
+        <item>레인지/오븐</item>
+        <item>식기세척기/건조기</item>
+        <item>소형주방가전</item>
+    </string-array>
+    <string-array name="EngSmall10">
+        <item>Refrigerator</item>
+        <item>Range/Oven</item>
+        <item>Dish washer/Dryer</item>
+        <item>Small Kitchen Electirc Applicance</item>
+    </string-array>
+    <string-array name="Small11">
+        <item>식탁</item>
+        <item>의자</item>
+        <item>주방수납</item>
+    </string-array>
+    <string-array name="EngSmall11">
+        <item>Table</item>
+        <item>Chair</item>
+        <item>Storage for Kitchen</item>
+    </string-array>
+    <string-array name="Small12">
+        <item>방조명</item>
+    </string-array>
+    <string-array name="EngSmall12">
+        <item>Room lighting</item>
+    </string-array>
+    <string-array name="Small13">
+        <item>제습기</item>
+    </string-array>
+    <string-array name="EngSmall13">
+        <item>Dehumidifier</item>
+    </string-array>
+    <string-array name="Small14">
+        <item>옷장</item>
+        <item>행거</item>
+        <item>붙박이장</item>
+        <item>서랍장</item>
+        <item>거울</item>
+    </string-array>
+    <string-array name="EngSmall14">
+        <item>Closet</item>
+        <item>Hanger</item>
+        <item>Built-in wardrobe</item>
+        <item>Drawer</item>
+        <item>Mirror</item>
+    </string-array>
+    <string-array name="Small15">
+        <item>방조명</item>
+    </string-array>
+    <string-array name="EngSmall15">
+        <item>Room lighting</item>
+    </string-array>
+    <string-array name="Small16">
+        <item>욕실수납</item>
+        <item>샤워커튼</item>
+    </string-array>
+    <string-array name="EngSmall16">
+        <item>Storage for washroom</item>
+        <item>Shower curtain</item>
+    </string-array>
+    <string-array name="Small17">
+        <item>욕실등</item>
+    </string-array>
+    <string-array name="EngSmall17">
+        <item>Washroom light</item>
+    </string-array>
+    <string-array name="Small18">
+        <item>가습기</item>
+        <item>공기청정기</item>
+        <item>제습기</item>
+        <item>선풍기</item>
+    </string-array>
+    <string-array name="EngSmall18">
+        <item>Humidifier</item>
+        <item>Air cleaner</item>
+        <item>Dehumidifier</item>
+        <item>Electric fan</item>
+    </string-array>
+    <string-array name="Small19">
+        <item>침대</item>
+        <item>책상</item>
+        <item>의자</item>
+        <item>수납장</item>
+    </string-array>
+    <string-array name="EngSmall19">
+        <item>Bed</item>
+        <item>Desk</item>
+        <item>Chair</item>
+        <item>Storage closet</item>
+    </string-array>
+    <string-array name="Small20">
+        <item>방조명</item>
+        <item>스탠드</item>
+        <item>무드등/장식조명</item>
+    </string-array>
+    <string-array name="EngSmall20">
+        <item>Room lighting</item>
+        <item>Desk Lamp</item>
+        <item>Mood Lamp</item>
+    </string-array>
+</resources>
