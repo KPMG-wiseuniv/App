@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:visibility="visible"
+    tools:context=".Fragment8">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:text="Lastly, you're going to answer three questions!"
+        android:textSize="25dp"
+        android:textAlignment="textStart"
+        android:gravity="start"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:text="Please do not think deeply and answer honestly"
+        android:textSize="17dp"
+        android:textAlignment="textStart"
+        android:gravity="start"></TextView>
+
+    <Button
+        android:id="@+id/ok_button"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="370dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:text="OK!"
+        android:textSize="30dp"
+        android:backgroundTint="@color/darkgray"></Button>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="600dp"
+        android:src="@drawable/logo_white"></ImageView>
+
+</FrameLayout>
