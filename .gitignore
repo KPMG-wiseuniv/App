@@ -1,15 +1,42 @@
-*.iml
+#built application files
+*.apk
+*.ap_
+
+#generated files
+bin/
+gen/
+
+#Ignore gradle files
 .gradle
+.gradle/
+/build
+
+#Local configuration file
 /local.properties
+local.properties
+
+#Mac OS X clutter
+.DS_Store
+
+#Windows clutter
+Thumbs.db
+
+#Intellij IDEA
+/.idea/
+.idea/
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
+
+#json file
+.json
+/.json/
+
+#etc
+*.iml
 /captures
 .externalNativeBuild
 .cxx
-local.properties
