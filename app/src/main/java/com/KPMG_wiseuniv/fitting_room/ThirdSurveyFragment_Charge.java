@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -37,32 +38,37 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_third_survey_charge, container, false);
-        final SeekBar seekBar = (SeekBar) rootView.findViewById(R.id.seekBar);
-        money = (TextView) rootView.findViewById(R.id.charge);
+        View view = inflater.inflate(R.layout.fragment_third_survey_charge, container, false);
+        Button btn = (Button) view.findViewById(R.id.finish_button);
+        final SeekBar seekBar = (SeekBar) view.findViewById(R.id.seekBar);
+        money = (TextView) view.findViewById(R.id.charge);
 
         seekBar.setProgress(0);
         money.setText("0");
 
         seekBar.setOnSeekBarChangeListener(this);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Result.newInstance());
+            }
+        });
+
         // Inflate the layout for this fragment
-        return rootView;
+        return view;
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         money.setText("" + progress);
-
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
-
     }
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-
     }
 }

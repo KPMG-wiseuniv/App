@@ -28,22 +28,8 @@ public class ThirdSurveyFragment_Result extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ThirdSurveyFragment_Result.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ThirdSurveyFragment_Result newInstance(String param1, String param2) {
-        ThirdSurveyFragment_Result fragment = new ThirdSurveyFragment_Result();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public static ThirdSurveyFragment_Result newInstance() {
+        return new ThirdSurveyFragment_Result();
     }
 
     @Override

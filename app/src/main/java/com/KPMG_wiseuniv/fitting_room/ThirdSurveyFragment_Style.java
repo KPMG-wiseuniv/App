@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.ListFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +63,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         //get Text
-        String result = (String) styleListView.getItemAtPosition(position);
+        String result = styles.get(position).getStyle();
         ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Function.newInstance());
 
         Bundle bundle = new Bundle();
@@ -85,7 +86,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
         styles.add(new ThirdSurveyStyleList("Vintage & Retro", " This house mainly consists of deep, dark colors such as dark green, dark brown, and black.  Antique wooden furniture and props are often used.", R.drawable.style_vintage_retro));
         styles.add(new ThirdSurveyStyleList("Minimal", " White and light gray are the main colors, minimizing props and decorations, and most of spaces are emptied by placing only necessary furniture.", R.drawable.style_minimalism));
 
-        styleListView = (ListView) rootView.findViewById(R.id.listView_style);
+        styleListView = (ListView) rootView.findViewById(android.R.id.list);
         styleAdapter = new ThirdSurveyStyleAdapter(getContext(), styles);
         styleListView.setAdapter(styleAdapter);
 
