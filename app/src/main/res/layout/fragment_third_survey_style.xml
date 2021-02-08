@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     android:visibility="visible"
-    tools:context=".Fragment8">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".ThirdSurveyFragment_Style">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -24,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="160dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -33,17 +31,40 @@
         android:textAlignment="textStart"
         android:gravity="start"></TextView>
 
-    <Button
-        android:id="@+id/ok_button"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="370dp"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textColor="@color/white"
+        android:text="(1/3)"
+        android:textSize="17dp"
         android:textAlignment="center"
-        android:text="OK!"
-        android:textSize="30dp"
-        android:backgroundTint="@color/darkgray"></Button>
+        android:gravity="center_horizontal"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:text="Which house do you want to live?"
+        android:textSize="25dp"
+        android:textAlignment="textStart"
+        android:gravity="start"></TextView>
+
+    <ListView
+        android:id="@+id/listView_style"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white_2"
+        android:scrollbarSize="10dp"
+        android:smoothScrollbar="true"></ListView>
 
     <ImageView
         android:id="@+id/imageView"

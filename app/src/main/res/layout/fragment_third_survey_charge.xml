@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     android:visibility="visible"
-    tools:context=".Fragment9">
+    tools:context=".ThirdSurveyFragment_Charge">
 
     <TextView
         android:layout_width="match_parent"
@@ -34,37 +34,65 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="250dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
-        android:text="(1/3)"
+        android:text="(3/3)"
         android:textSize="17dp"
         android:textAlignment="center"
         android:gravity="center_horizontal"></TextView>
 
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="290dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="270dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
-        android:text="Which house do you want to live?"
-        android:textSize="25dp"
+        android:text="How much price do you want to spend?"
+        android:textSize="22dp"
         android:textAlignment="textStart"
         android:gravity="start"></TextView>
 
-    <ListView
-        android:id="@+id/listView_style"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white_2"
-        android:scrollbarSize="10dp"
-        android:smoothScrollbar="true"></ListView>
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="400dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/charge"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/white_2"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/purple_500"
+            android:textSize="22dp"></TextView>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@color/white_2"
+            android:text="won"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="22dp"></TextView>
+    </LinearLayout>
+
+
+    <SeekBar
+        android:id="@+id/seekBar"
+
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="450dp" />
 
     <ImageView
         android:id="@+id/imageView"

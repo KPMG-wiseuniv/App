@@ -1,12 +1,12 @@
 package com.KPMG_wiseuniv.fitting_room;
 
-public class SingleStyle {
+public class ThirdSurveyStyleList {
     String style;
     String desc;
     int resId;
 
     //생성
-    public SingleStyle(String style, String desc, int resId) {
+    public ThirdSurveyStyleList(String style, String desc, int resId) {
         this.style = style;
         this.desc = desc;
         this.resId = resId;

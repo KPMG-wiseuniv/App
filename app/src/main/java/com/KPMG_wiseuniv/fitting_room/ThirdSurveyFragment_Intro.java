@@ -7,13 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment10#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Fragment10 extends Fragment {
+public class ThirdSurveyFragment_Intro extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,12 +20,13 @@ public class Fragment10 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment10() {
+    public ThirdSurveyFragment_Intro() {
         // Required empty public constructor
     }
 
-    public static Fragment10 newInstance() {
-        return new Fragment10();
+    // TODO: Rename and change types and number of parameters
+    public static ThirdSurveyFragment_Intro newInstance() {
+        return new ThirdSurveyFragment_Intro();
     }
 
     @Override
@@ -45,6 +42,16 @@ public class Fragment10 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_10, container, false);
+        View view = inflater.inflate(R.layout.fragment_third_survey_intro, null);
+        Button btn = (Button)view.findViewById(R.id.ok_button);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Style.newInstance());
+            }
+        });
+        return view;
     }
 }

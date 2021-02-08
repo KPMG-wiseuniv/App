@@ -16,7 +16,7 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StyleAdapter extends ArrayAdapter implements AdapterView.OnItemClickListener {
+public class ThirdSurveyStyleAdapter extends ArrayAdapter implements AdapterView.OnItemClickListener {
 
     private Context context;
     private List list;
@@ -32,7 +32,7 @@ public class StyleAdapter extends ArrayAdapter implements AdapterView.OnItemClic
         public ImageView style_image;
     }
 
-    public StyleAdapter(Context context, ArrayList list){
+    public ThirdSurveyStyleAdapter(Context context, ArrayList list){
         super(context, 0, list);
         this.context = context;
         this.list = list;
@@ -52,7 +52,7 @@ public class StyleAdapter extends ArrayAdapter implements AdapterView.OnItemClic
         viewHolder.style_desc = (TextView) convertView.findViewById(R.id.styleText2);
         viewHolder.style_image = (ImageView) convertView.findViewById(R.id.styleImage);
 
-        final SingleStyle singleStyle = (SingleStyle) list.get(position);
+        final ThirdSurveyStyleList singleStyle = (ThirdSurveyStyleList) list.get(position);
         viewHolder.style_name.setText(singleStyle.getStyle());
         viewHolder.style_desc.setText(singleStyle.getDesc());
         Glide
