@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ThirdSurveyFragment_Function extends Fragment {
-    MainActivity activity;
+    ConditionSurveyActivity activity;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,7 +46,7 @@ public class ThirdSurveyFragment_Function extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
 
-        activity=(MainActivity)getActivity();
+        activity=(ConditionSurveyActivity) getActivity();
     }
 
     @Override
@@ -65,14 +65,14 @@ public class ThirdSurveyFragment_Function extends Fragment {
             @Override
             public void onClick(View v) {
                 activity.setFunction("design");
-                ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Charge.newInstance());
+                activity.replaceFragment(ThirdSurveyFragment_Charge.newInstance());
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activity.setFunction("function");
-                ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Charge.newInstance());
+                activity.replaceFragment(ThirdSurveyFragment_Charge.newInstance());
             }
         });
         return view;

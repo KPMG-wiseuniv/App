@@ -21,7 +21,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
     private static ThirdSurveyStyleAdapter styleAdapter;
 
     Context context;
-    MainActivity activity;
+    ConditionSurveyActivity activity;
     String receiveData;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -55,7 +55,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
         super.onAttach(context);
         this.context = context;
 
-        activity = (MainActivity) getActivity();
+        activity = (ConditionSurveyActivity) getActivity();
         receiveData = "";
     }
 
@@ -66,7 +66,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
         String result = styles.get(position).getStyle();
         activity.setStyle(result);
 
-        ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Function.newInstance());
+        activity.replaceFragment(ThirdSurveyFragment_Function.newInstance());
 
     }
 

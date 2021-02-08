@@ -49,7 +49,7 @@ public class ThirdSurveyFragment_Intro extends Fragment {
             @Override
             public void onClick(View v) {
 
-                ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Style.newInstance());
+                ((ConditionSurveyActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Style.newInstance());
             }
         });
         return view;

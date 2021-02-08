@@ -15,7 +15,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
-        android:text="Lastly, you're going to answer three questions!"
+        android:text="Secondly, you're going to answer three questions!"
         android:textSize="25dp"
         android:textAlignment="textStart"
         android:gravity="start"></TextView>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:src="@drawable/logo_black"
+        android:paddingTop="25dp"
+        android:scaleType="fitCenter"
+        android:background="@drawable/first_survey_item_bottom"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:paddingTop="50dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:paddingRight="30dp"
+        android:gravity="right">
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+        <View
+            android:id="@+id/blank"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/total" />
+        <TextView
+            android:id="@+id/cart_totalprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$100.00"
+            android:textColor="#01A9DB"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/blank"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/payment_btn"
+        android:layout_width="190dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:text="Payment"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/payment_btn"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:clickable="true"/>
+</LinearLayout>

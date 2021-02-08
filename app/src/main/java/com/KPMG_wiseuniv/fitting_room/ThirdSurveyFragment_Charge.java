@@ -22,7 +22,7 @@ import org.w3c.dom.Text;
  */
 public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSeekBarChangeListener {
     private TextView money;
-    MainActivity activity;
+    ConditionSurveyActivity activity;
 
     public ThirdSurveyFragment_Charge() {
         // Required empty public constructor
@@ -41,7 +41,7 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        activity=(MainActivity)getActivity();
+        activity=(ConditionSurveyActivity)getActivity();
     }
 
     @Override
@@ -61,7 +61,7 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
             @Override
             public void onClick(View v) {
                 activity.setPrice(money.getText().toString());
-                ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Result.newInstance());
+                activity.replaceFragment(ThirdSurveyFragment_Result.newInstance());
             }
         });
 

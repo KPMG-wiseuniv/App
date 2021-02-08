@@ -1,6 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -18,7 +20,7 @@ import android.widget.TextView;
  */
 public class ThirdSurveyFragment_Result extends Fragment {
 
-    MainActivity activity;
+    ConditionSurveyActivity activity;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,7 +51,7 @@ public class ThirdSurveyFragment_Result extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        activity=(MainActivity)getActivity();
+        activity=(ConditionSurveyActivity) getActivity();
     }
 
     @Override
@@ -61,11 +63,39 @@ public class ThirdSurveyFragment_Result extends Fragment {
         TextView result_charge=view.findViewById(R.id.result_charge);
         TextView result_function=view.findViewById(R.id.result_function);
         TextView result_style=view.findViewById(R.id.result_style);
+        Button ok_button=view.findViewById(R.id.ok_button);
+        Button again_button=view.findViewById(R.id.again_button);
 
+        result_furniture.setText(ManageFurniture.getInstance().getFurniture().getTh_cat());
         result_charge.setText(activity.getPrice());
         result_function.setText(activity.getFunction());
         result_style.setText(activity.getStyle());
 
+        setting_ok_button(ok_button);
+        setting_again_button(again_button);
+
         return view;
+    }
+
+    public void setting_ok_button(Button btn){
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ManageFurniture.getInstance().getFurniture().setStyle(activity.getStyle());
+                ManageFurniture.getInstance().getFurniture().setFunction(activity.getFunction());
+                ManageFurniture.getInstance().getFurniture().setPrice(activity.getPrice());
+                activity.finish();
+                startActivity(new Intent(activity, PictureActivity.class));
+            }
+        });
+    }
+
+    public void setting_again_button(Button btn){
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.replaceFragment(ThirdSurveyFragment_Style.newInstance());
+            }
+        });
     }
 }
