@@ -1,12 +1,15 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +17,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ThirdSurveyFragment_Result extends Fragment {
+
+    MainActivity activity;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,9 +47,25 @@ public class ThirdSurveyFragment_Result extends Fragment {
     }
 
     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        activity=(MainActivity)getActivity();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third_survey_result, container, false);
+        View view=inflater.inflate(R.layout.fragment_third_survey_result, container, false);
+        TextView result_furniture=view.findViewById(R.id.result_furniture);
+        TextView result_charge=view.findViewById(R.id.result_charge);
+        TextView result_function=view.findViewById(R.id.result_function);
+        TextView result_style=view.findViewById(R.id.result_style);
+
+        result_charge.setText(activity.getPrice());
+        result_function.setText(activity.getFunction());
+        result_style.setText(activity.getStyle());
+
+        return view;
     }
 }

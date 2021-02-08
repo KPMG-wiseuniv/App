@@ -113,6 +113,7 @@
             android:textSize="22dp"></TextView>
 
         <TextView
+            android:id="@+id/result_style"
             android:layout_width="110dp"
             android:layout_height="50dp"
             android:background="@color/white_2"

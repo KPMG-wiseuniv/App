@@ -1,7 +1,9 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import org.w3c.dom.Text;
  */
 public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSeekBarChangeListener {
     private TextView money;
+    MainActivity activity;
 
     public ThirdSurveyFragment_Charge() {
         // Required empty public constructor
@@ -33,6 +36,12 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        activity=(MainActivity)getActivity();
     }
 
     @Override
@@ -51,6 +60,7 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                activity.setPrice(money.getText().toString());
                 ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Result.newInstance());
             }
         });

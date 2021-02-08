@@ -64,10 +64,9 @@ public class ThirdSurveyFragment_Style extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         //get Text
         String result = styles.get(position).getStyle();
-        ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Function.newInstance());
+        activity.setStyle(result);
 
-        Bundle bundle = new Bundle();
-        bundle.putString("result", result);
+        ((MainActivity)getActivity()).replaceFragment(ThirdSurveyFragment_Function.newInstance());
 
     }
 
