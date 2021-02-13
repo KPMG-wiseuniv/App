@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ShopFragment extends Fragment {
+    ConditionSurveyActivity activity;
     MainActivity mainActivity;
     RecyclerView cart_recyclerview;
     TextView cart_totalprice;
@@ -45,6 +47,15 @@ public class ShopFragment extends Fragment {
         setting_view(v);
         setting_cart_item();
         setting_recyclerview();
+
+        Button btn = (Button) v.findViewById(R.id.payment_btn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.replaceFragment(PaymentFragment.newInstance());
+            }
+        });
 
         return v;
     }

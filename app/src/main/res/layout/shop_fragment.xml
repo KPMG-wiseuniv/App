@@ -53,19 +53,17 @@
             android:textSize="20sp"
             android:layout_toRightOf="@+id/blank"/>
     </RelativeLayout>
-    <TextView
+    <Button
         android:id="@+id/payment_btn"
         android:layout_width="190dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_height="80dp"
         android:text="Payment"
         android:layout_gravity="right"
-        android:gravity="center"
         android:layout_marginRight="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/payment_btn"
+        android:backgroundTint="@color/lightblue"
         android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:clickable="true"/>
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
 </LinearLayout>

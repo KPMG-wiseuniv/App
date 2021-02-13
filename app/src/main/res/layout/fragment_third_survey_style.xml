@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     android:visibility="visible"
+    android:orientation="vertical"
     tools:context=".ThirdSurveyFragment_Style">
 
     <TextView
@@ -22,7 +22,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="160dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -34,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -46,7 +45,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="290dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -60,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@color/white_2"
         android:scrollbarSize="10dp"
@@ -71,7 +69,7 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/logo_white"></ImageView>
 
-</FrameLayout>
+</LinearLayout>

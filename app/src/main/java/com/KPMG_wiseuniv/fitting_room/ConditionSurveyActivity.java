@@ -52,5 +52,4 @@ public class ConditionSurveyActivity extends AppCompatActivity {
         this.price = price;
     }
 
-
 }

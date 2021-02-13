@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     android:visibility="visible"
-    tools:context=".ThirdSurveyFragment_Charge">
-
+    tools:context=".ThirdSurveyFragment_Charge"
+    android:orientation="vertical">
+    
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -22,7 +22,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="160dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -34,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -47,7 +46,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginTop="270dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -59,8 +57,18 @@
     <LinearLayout
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@color/white_2"
+            android:text="$"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="22dp"></TextView>
 
         <TextView
             android:id="@+id/charge"
@@ -73,32 +81,20 @@
             android:textAlignment="center"
             android:textColor="@color/purple_500"
             android:textSize="22dp"></TextView>
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:background="@color/white_2"
-            android:text="won"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:textSize="22dp"></TextView>
     </LinearLayout>
 
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400dp"
-        android:max="1000000"/>
+        android:max="700"/>
 
     <Button
         android:id="@+id/finish_button"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_marginTop="450dp"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/darkgray"
         android:text="Finished"
@@ -109,8 +105,8 @@
         android:id="@+id/imageView"
         android:layout_width="130dp"
         android:layout_height="130dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="600dp"
         android:src="@drawable/logo_white"></ImageView>
 
-</FrameLayout>
+</LinearLayout>
