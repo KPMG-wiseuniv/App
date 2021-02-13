@@ -57,9 +57,6 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
 
         seekBar.setOnSeekBarChangeListener(this);
 
-        if(seekBar.getProgress() == seekBar.getMax()){
-            money.setText(seekBar + "+");
-        }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +72,9 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         money.setText("" + progress);
+        if(progress==700){
+            money.append("+");
+        }
     }
 
     @Override

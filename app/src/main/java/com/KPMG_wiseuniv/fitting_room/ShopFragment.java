@@ -1,6 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,14 +49,6 @@ public class ShopFragment extends Fragment {
         setting_cart_item();
         setting_recyclerview();
 
-        Button btn = (Button) v.findViewById(R.id.payment_btn);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                activity.replaceFragment(PaymentFragment.newInstance());
-            }
-        });
 
         return v;
     }
@@ -63,6 +56,16 @@ public class ShopFragment extends Fragment {
         cart_recyclerview=v.findViewById(R.id.cart_recyclerview);
         cart_totalprice=v.findViewById(R.id.cart_totalprice);
         payment_btn=v.findViewById(R.id.payment_btn);
+
+        payment_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mainActivity, PaymentActivity.class);
+                intent.putExtra("total", total);
+                intent.putExtra("cnt", data.size());
+                startActivity(intent);
+            }
+        });
     }
 
     public void setting_cart_item(){
