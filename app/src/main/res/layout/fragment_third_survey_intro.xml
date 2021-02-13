@@ -5,11 +5,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".ThirdSurveyFragment_Intro">
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:layout_marginTop="180dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -20,7 +22,8 @@
         android:gravity="start"></TextView>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -32,7 +35,8 @@
     <Button
         android:id="@+id/ok_button"
         android:layout_width="160dp"
-        android:layout_height="90dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         android:textColor="@color/white"
@@ -44,7 +48,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="130dp"
         android:src="@drawable/logo_white"></ImageView>

@@ -7,11 +7,13 @@
     android:background="@drawable/main_background"
     android:visibility="visible"
     android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".ThirdSurveyFragment_Function">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -22,7 +24,8 @@
         android:gravity="start"></TextView>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -33,7 +36,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -45,7 +49,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -73,7 +78,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -85,7 +91,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -122,7 +129,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:src="@drawable/logo_white"></ImageView>

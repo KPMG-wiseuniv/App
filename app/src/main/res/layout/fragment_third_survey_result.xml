@@ -6,11 +6,13 @@
     android:background="@drawable/main_background"
     android:visibility="visible"
     android:orientation="vertical"
+    android:layout_weight="10"
     tools:context=".ThirdSurveyFragment_Charge">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
@@ -20,7 +22,8 @@
         android:gravity="center"></TextView>
     <TextView
         android:layout_width="400dp"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
@@ -31,7 +34,8 @@
 
     <LinearLayout
         android:layout_width="360dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal">
 
@@ -59,7 +63,8 @@
 
     <LinearLayout
         android:layout_width="360dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -95,7 +100,8 @@
 
     <LinearLayout
         android:layout_width="360dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -144,7 +150,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal">
 
@@ -174,7 +181,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:src="@drawable/logo_white"></ImageView>
