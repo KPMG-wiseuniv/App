@@ -106,6 +106,7 @@ public class Picture_choose_Fragment extends Fragment {
                     startActivityForResult(galleryintent, GALLERY_CODE);
                 }
                 else if(which==1){
+                    pictureActivity.setSelected(selected_img);
                     pictureActivity.training_image();
                 }
             }

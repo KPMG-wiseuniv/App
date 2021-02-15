@@ -28,6 +28,7 @@ public class ConditionSurveyActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.ContentLayout, fragment).commit();
     }
 
+
     public String getStyle() {
         return style;
     }

@@ -1,7 +1,11 @@
 package com.KPMG_wiseuniv.fitting_room;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +13,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.bumptech.glide.Glide;
+
+import java.io.File;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Picture_train_Fragment extends Fragment {
     PictureActivity pictureActivity;
@@ -36,13 +51,47 @@ public class Picture_train_Fragment extends Fragment {
         alltrain=ManageFurniture.getInstance();
         nowdata=alltrain.getFurniture();
 
-        System.out.println(nowdata.getBig_cat());
-        System.out.println(nowdata.getSec_cat());
-        System.out.println(nowdata.getTh_cat());
-        System.out.println(nowdata.getStyle());
-        System.out.println(nowdata.getFunction());
-        System.out.println(nowdata.getPrice());
+        uploadImage();
 
         return v;
+    }
+    public void uploadImage(){
+        RetrofitAPI myAPI=RetrofitClient.getApiService();
+        String imagepath=getPath(pictureActivity.selected);
+        File file=new File(imagepath);
+        RequestBody requestFile=RequestBody.create(MediaType.parse("image/*"), file);
+        MultipartBody.Part body=MultipartBody.Part.createFormData("image", "train.jpg", requestFile);
+        Call<Void> send=myAPI.send_img(body);
+        send.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if(response.isSuccessful()){
+
+                }
+                else{
+                    System.out.println("send and get image fail");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                System.out.println("server communication fail");
+                System.out.println(t);
+            }
+        });
+    }
+    // uri 절대경로 가져오기
+    public String getPath(Uri uri){
+
+        String filePath;
+        Cursor cursor = getActivity().getContentResolver().query(uri, null, null, null, null);
+        if (cursor == null) {
+            filePath = uri.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            filePath = cursor.getString(idx); cursor.close();
+        }
+        return filePath;
     }
 }

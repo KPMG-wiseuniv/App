@@ -8,36 +8,36 @@
     android:weightSum="10"
     tools:context=".ThirdSurveyFragment_Charge"
     android:orientation="vertical">
-    
-    <TextView
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:layout_marginTop="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
         android:text="Secondly, you're going to answer three questions!"
-        android:textSize="25dp"
-        android:textAlignment="textStart"
-        android:gravity="start"></TextView>
+        android:textSize="25sp"
+        android:gravity="bottom"></TextView>
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_weight="1"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
         android:text="Please do not think deeply and answer honestly"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textAlignment="textStart"
         android:gravity="start"></TextView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75"
-        android:layout_marginTop="50dp"
+        android:layout_weight="0.5"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
@@ -63,12 +63,11 @@
         android:layout_width="360dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal">
 
         <TextView
             android:layout_width="60dp"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:background="@color/white_2"
             android:text="$"
             android:textAlignment="center"
@@ -79,7 +78,7 @@
         <TextView
             android:id="@+id/charge"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:background="@color/white_2"
             android:gravity="center"
             android:layout_gravity="center_vertical"
@@ -102,7 +101,7 @@
         android:id="@+id/finish_button"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/darkgray"
         android:text="Finished"
@@ -110,12 +109,11 @@
         android:textSize="15dp"></Button>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo_white"></ImageView>
+        android:src="@drawable/logo_white"
+        android:paddingTop="25dp"
+        android:scaleType="fitCenter"/>
 
 </LinearLayout>

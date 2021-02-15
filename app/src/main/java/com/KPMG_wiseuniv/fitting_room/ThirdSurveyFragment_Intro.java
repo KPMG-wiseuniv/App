@@ -44,7 +44,7 @@ public class ThirdSurveyFragment_Intro extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_third_survey_intro, null);
+        View view = inflater.inflate(R.layout.fragment_third_survey_intro, container, false);
         Button btn = (Button)view.findViewById(R.id.ok_button);
 
         btn.setOnClickListener(new View.OnClickListener() {
