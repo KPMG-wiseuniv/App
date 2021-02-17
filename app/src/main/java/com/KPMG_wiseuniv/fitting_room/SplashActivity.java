@@ -15,11 +15,13 @@ import retrofit2.Response;
 
 public class SplashActivity extends AppCompatActivity {
     RetrofitAPI myAPI;
+    ArrayList<Imgdata> total;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
+        total=new ArrayList<>();
         myAPI=RetrofitClient.getApiService();
 
         get_Image_data();
@@ -35,12 +37,10 @@ public class SplashActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     for(Imgdata item: response.body()){
                         item.setImage(RetrofitClient.getBaseUrl()+item.getImage());
-                        System.out.println(item.getBigcategory());
-                        System.out.println(item.getColor());
-                        System.out.println(item.getPrice());
-                        System.out.println(item.getDetail());
-                        System.out.println(item.getImage());
+                        total.add(item);
                     }
+                    System.out.println(total.size());
+                    ManageImgdata.getInstance().setTotal_imgdata(total);
                     finish();
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/history_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2021-02-17"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:paddingLeft="20dp"
+        android:background="@color/lightgray"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Options Selected"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"/>
+    <TextView
+        android:id="@+id/history_first_cat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Big-Middle-Small"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="2dp"
+        android:textStyle="italic"/>
+    <TextView
+        android:id="@+id/history_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Style-Design"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="2dp"
+        android:textStyle="italic"/>
+    <TextView
+        android:id="@+id/history_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Under $300"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="2dp"
+        android:textStyle="italic"
+        android:layout_marginBottom="50dp"/>
+</LinearLayout>

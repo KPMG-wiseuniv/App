@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera2" />
 
@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FittingRoom">
-        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".PaymentActivity" />
         <activity android:name=".PictureActivity" />
         <activity android:name=".ConditionSurveyActivity" />
         <activity android:name=".FirstSurveyActivity" />

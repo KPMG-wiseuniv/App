@@ -70,6 +70,7 @@ public class FirstSurvey_Fragment extends Fragment {
                 if(question_order==1){
                     first_cat=holder.category_item.getText().toString();
                     ManageFurniture.getInstance().getFurniture().setBig_cat(first_cat);
+                    ManageFurniture.getInstance().setBig_cat(first_cat);
                     setting_new_recyclerview_data();
                     survey_adapter.changeData(survey_data);
                     order_number.setText("(2/3)");
@@ -78,6 +79,7 @@ public class FirstSurvey_Fragment extends Fragment {
                 else if(question_order==2){
                     second_cat=holder.category_item.getText().toString();
                     ManageFurniture.getInstance().getFurniture().setSec_cat(second_cat);
+                    ManageFurniture.getInstance().setSec_cat(second_cat);
                     setting_new_recyclerview_data();
                     survey_adapter.changeData(survey_data);
                     order_number.setText("(3/3)");
@@ -86,6 +88,7 @@ public class FirstSurvey_Fragment extends Fragment {
                 else if(question_order==3){//if finish all 3 questions, then go to another page
                     third_cat=holder.category_item.getText().toString();
                     ManageFurniture.getInstance().getFurniture().setTh_cat(third_cat);
+                    ManageFurniture.getInstance().setTh_cat(third_cat);
                     firstactivity.setSecond_cat(second_cat);
                     firstactivity.setThird_cat(third_cat);
                     firstactivity.finish_firstsurvey();

@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
         fittingroom_history_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(mainActivity, HistoryActivity.class));
             }
         });
     }

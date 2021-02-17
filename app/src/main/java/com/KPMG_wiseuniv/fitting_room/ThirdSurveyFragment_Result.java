@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ThirdSurveyFragment_Result#newInstance} factory method to
@@ -74,6 +77,8 @@ public class ThirdSurveyFragment_Result extends Fragment {
         setting_ok_button(ok_button);
         setting_again_button(again_button);
 
+        setting_date();
+
         return view;
     }
 
@@ -81,9 +86,20 @@ public class ThirdSurveyFragment_Result extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ManageFurniture.getInstance().getFurniture().setStyle(activity.getStyle());
-                ManageFurniture.getInstance().getFurniture().setFunction(activity.getFunction());
-                ManageFurniture.getInstance().getFurniture().setPrice(activity.getPrice());
+//                ManageFurniture.getInstance().getFurniture().setStyle(activity.getStyle());
+//                ManageFurniture.getInstance().getFurniture().setFunction(activity.getFunction());
+//                ManageFurniture.getInstance().getFurniture().setPrice(activity.getPrice());
+
+                Furniture newdata=new Furniture();
+                newdata.setDate(ManageFurniture.getInstance().getDate());
+                newdata.setBig_cat(ManageFurniture.getInstance().getBig_cat());
+                newdata.setSec_cat(ManageFurniture.getInstance().getSec_cat());
+                newdata.setTh_cat(ManageFurniture.getInstance().getTh_cat());
+                newdata.setStyle(activity.getStyle());
+                newdata.setFunction(activity.getFunction());
+                newdata.setPrice(activity.getPrice());
+                ManageFurniture.getInstance().addnewdata(newdata);
+
                 activity.finish();
                 startActivity(new Intent(activity, PictureActivity.class));
             }
@@ -97,5 +113,12 @@ public class ThirdSurveyFragment_Result extends Fragment {
                 activity.replaceFragment(ThirdSurveyFragment_Style.newInstance());
             }
         });
+    }
+
+    public void setting_date(){
+        long now=System.currentTimeMillis();
+        Date mDate=new Date(now);
+        SimpleDateFormat today=new SimpleDateFormat("yyyy-MM-dd");
+        ManageFurniture.getInstance().setDate(today.format(mDate));
     }
 }

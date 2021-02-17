@@ -64,14 +64,14 @@ public class ThirdSurveyFragment_Function extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.setFunction("design");
+                activity.setFunction("Design");
                 activity.replaceFragment(ThirdSurveyFragment_Charge.newInstance());
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.setFunction("function");
+                activity.setFunction("Function");
                 activity.replaceFragment(ThirdSurveyFragment_Charge.newInstance());
             }
         });

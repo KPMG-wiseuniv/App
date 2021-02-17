@@ -1,6 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
 public class Furniture {
+    String date;
     String big_cat;
     String sec_cat;
     String th_cat;
@@ -9,13 +10,22 @@ public class Furniture {
     String price;
 
     public Furniture(){}
-    public Furniture(String big_cat, String sec_cat, String th_cat, String style, String function, String price) {
+    public Furniture(String date, String big_cat, String sec_cat, String th_cat, String style, String function, String price) {
+        this.date=date;
         this.big_cat = big_cat;
         this.sec_cat = sec_cat;
         this.th_cat = th_cat;
         this.style = style;
         this.function = function;
         this.price = price;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getBig_cat() {
