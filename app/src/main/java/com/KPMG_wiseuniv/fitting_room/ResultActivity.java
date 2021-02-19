@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ResultActivity extends AppCompatActivity {
     LinearLayout aimy_layout, random_layout;
-    TextView result_message, random_result_message;
+    TextView result_message, random_result_message, result_detail_message;
     RecyclerView airesult_recyclerview, myresult_recyclerview, random_recyclerview;
     int dAIinterior, AIcolor, AIFD, nowchoice;
     Furniture now_furniture;
@@ -41,6 +41,7 @@ public class ResultActivity extends AppCompatActivity {
         aimy_layout=findViewById(R.id.aimy_layout);
         random_layout=findViewById(R.id.random_layout);
         result_message=findViewById(R.id.result_message);
+        result_detail_message=findViewById(R.id.result_detail_message);
         random_result_message=findViewById(R.id.random_result_message);
         airesult_recyclerview=findViewById(R.id.ai_result_recyclerview);
         myresult_recyclerview=findViewById(R.id.my_result_recyclerview);
@@ -160,6 +161,21 @@ public class ResultActivity extends AppCompatActivity {
             myresult_recyclerview.setLayoutManager(mylayoutmanager);
             airesult_recyclerview.setAdapter(aiadapter);
             myresult_recyclerview.setAdapter(myadapter);
+            String color=null;
+            if(AIcolor==0){
+                color="black";
+            }else if(AIcolor==1){
+                color="white";
+            }else if(AIcolor==2){
+                color="gray";
+            }else if(AIcolor==3){
+                color="beige";
+            }else if(AIcolor==4){
+                color="brown";
+            }else if(AIcolor==5){
+                color="light brown";
+            }
+            result_detail_message.setText("AI result: "+myfurniture+" that\n"+color+" and "+AIinterior+","+AIdetail+"\nfits on your Room!");
             aimy_layout.setVisibility(View.VISIBLE);
             random_layout.setVisibility(View.GONE);
         }

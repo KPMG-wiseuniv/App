@@ -18,7 +18,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="0.5"/>
         <TextView
             android:id="@+id/picture_ment"
             android:layout_width="match_parent"
@@ -78,10 +78,10 @@ Refer to the example below for\ndistance and composition"
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:text="※If return to this page after CAMERA\nplease press upload picture you took before by GALLERY button"
+            android:layout_weight="1"
+            android:text="※If return to this page after CAMERA\nplease upload picture you took before\n by GALLERY button"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textStyle="bold"
             android:gravity="center"/>
 
