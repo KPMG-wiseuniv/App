@@ -75,14 +75,14 @@ public class ResultActivity extends AppCompatActivity {
             myprice=Integer.parseInt(now_furniture.getPrice());
         }
         System.out.println(mybig+" "+mymiddle+" "+myfurniture+" "+mystyle+" "+myfd+" "+myprice);
-        if(myfurniture=="Chair"){
-            if(myfd=="Design"){
+        if(myfurniture.equals("Chair")){
+            if(myfd.equals("Design")){
                 if(AIFD==1){
                     AIdetail="bar chair";
                 }else if(AIFD==2){
                     AIdetail="cafe chair";
                 }
-            }else if(myfd=="Function"){
+            }else if(myfd.equals("Function")){
                 if(AIFD==1){
                     AIdetail="desk chair";
                 }else if(AIFD==2){
@@ -92,14 +92,14 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
         }
-        else if(myfurniture=="Table"){
-            if(myfd=="Design"){
+        else if(myfurniture.equals("Table")){
+            if(myfd.equals("Design")){
                 if(AIFD==1){
                     AIdetail="bar table";
                 }else if(AIFD==2){
                     AIdetail="cafe table";
                 }
-            }else if(myfd=="Function"){
+            }else if(myfd.equals("Function")){
                 if(AIFD==1){
                     AIdetail="console table";
                 }else if(AIFD==2){
@@ -133,7 +133,7 @@ public class ResultActivity extends AppCompatActivity {
             for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){
                 Imgdata now=ManageImgdata.getInstance().getTotal_imgdata().get(i);
                 if(now.getBigcategory().equals(mybig)&&now.getMiddlecategory().equals(mymiddle)
-                &&now.getFurniturename().equals(myfurniture)&&now.getStyle().equals(AIinterior)&&now.getColor()==AIcolor){
+                &&now.getFurniturename().equals(myfurniture)){
                     random.add(now);
                 }
             }
@@ -172,7 +172,7 @@ public class ResultActivity extends AppCompatActivity {
             }else if(AIcolor==5){
                 color="light brown";
             }
-            random_result_message.setText("Sorry, we don't have products for you\nBut AI result: "+myfurniture+" that "+color+" and\n"+AIinterior+" fits on your Room!");
+            random_result_message.setText("Sorry, we don't have products for you\nBut AI result: "+myfurniture+" that\n"+color+" and "+AIinterior+","+AIdetail+"\nfits on your Room!");
             aimy_layout.setVisibility(View.GONE);
             random_layout.setVisibility(View.VISIBLE);
         }

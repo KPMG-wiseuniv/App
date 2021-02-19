@@ -63,11 +63,13 @@ public class Picture_train_Fragment extends Fragment {
         String imagepath=getPath(pictureActivity.selected);
         File file=new File(imagepath);
         RequestBody requestFile=RequestBody.create(MediaType.parse("image/*"), file);
-        MultipartBody.Part body=MultipartBody.Part.createFormData("image", "train.jpg", requestFile);
+        String imgname=getRandomStr();
+        imgname="train_"+imgname+".jpg";
+        MultipartBody.Part body=MultipartBody.Part.createFormData("image", imgname, requestFile);
         ArrayList<Furniture> now_total=ManageFurniture.getInstance().getTotal_furniture();
         Furniture now_furniture=now_total.get(now_total.size()-1);
         Train_param param=new Train_param(now_furniture.getTh_cat(), now_furniture.getFunction());
-        Call<Void> send=myAPI.send_img(body, param.getFurniture(), param.getFD());
+        Call<Void> send=myAPI.send_img(body, imgname, param.getFurniture(), param.getFD());
         send.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
@@ -83,6 +85,7 @@ public class Picture_train_Fragment extends Fragment {
                                 intent.putExtra("AIinterior", res.getInterior());
                                 intent.putExtra("AIcolor", res.getColor());
                                 intent.putExtra("AIFD", res.getFD());
+                                System.out.println(res.getInterior()+" "+res.getColor()+" "+res.getFD());
                                 intent.putExtra("nowchoice", now_total.size()-1);
                                 pictureActivity.finish();
                                 startActivity(intent);
@@ -124,5 +127,18 @@ public class Picture_train_Fragment extends Fragment {
             filePath = cursor.getString(idx); cursor.close();
         }
         return filePath;
+    }
+
+    public String getRandomStr(){
+        char[] tmp=new char[9];
+        for(int i=0; i<tmp.length; i++){
+            int div=(int)Math.floor(Math.random()*2);
+            if(div==0){
+                tmp[i]=(char)(Math.random()*10+'0');
+            }else{
+                tmp[i]=(char)(Math.random()*26+'A');
+            }
+        }
+        return new String(tmp);
     }
 }

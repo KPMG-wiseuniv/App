@@ -20,6 +20,7 @@ public interface RetrofitAPI {
     @Multipart
     @POST("train_img/")
     Call<Void> send_img(@Part MultipartBody.Part image,
+                        @Part("imgname") String imgname,
                         @Part("Furniture") String Furniture,
                         @Part("FD") String FD);
 

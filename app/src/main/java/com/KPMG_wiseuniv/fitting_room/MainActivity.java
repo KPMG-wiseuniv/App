@@ -84,4 +84,5 @@ public class MainActivity extends AppCompatActivity {
             cart_counttext.setText(Integer.toString(number));
         }
     }
+
 }
