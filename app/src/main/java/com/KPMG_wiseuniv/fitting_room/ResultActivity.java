@@ -128,6 +128,16 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
         }
+        if(ai.size()==0){
+            for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){
+                Imgdata now=ManageImgdata.getInstance().getTotal_imgdata().get(i);
+                if(now.getFurniturename().equals(myfurniture)){
+                    if(now.getColor()==AIcolor&&now.getStyle().equals(AIinterior)){
+                        ai.add(now);
+                    }
+                }
+            }
+        }
         result_message.setText("We found "+(ai.size()+my.size())+" fitting products\nfor you!");
         if(ai.size()+my.size()==0){
             for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){

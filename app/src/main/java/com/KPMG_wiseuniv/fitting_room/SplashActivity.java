@@ -2,6 +2,7 @@ package com.KPMG_wiseuniv.fitting_room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +40,6 @@ public class SplashActivity extends AppCompatActivity {
                         item.setImage(RetrofitClient.getBaseUrl()+item.getImage());
                         total.add(item);
                     }
-                    System.out.println(total.size());
                     ManageImgdata.getInstance().setTotal_imgdata(total);
                     try {
                         Thread.sleep(2000);

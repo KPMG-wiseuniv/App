@@ -8,6 +8,7 @@
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:src="@drawable/main_background"
         android:scaleType="fitXY"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,12 +75,20 @@ Refer to the example below for\ndistance and composition"
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/black"/>
         </LinearLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="※If return to this page after CAMERA\nplease press upload picture you took before by GALLERY button"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:src="@drawable/logo_white"
             android:paddingTop="25dp"
             android:scaleType="fitCenter"/>
