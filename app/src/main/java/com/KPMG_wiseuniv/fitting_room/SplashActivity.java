@@ -41,6 +41,11 @@ public class SplashActivity extends AppCompatActivity {
                     }
                     System.out.println(total.size());
                     ManageImgdata.getInstance().setTotal_imgdata(total);
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     finish();
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }

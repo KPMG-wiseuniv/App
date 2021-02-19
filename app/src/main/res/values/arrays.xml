@@ -155,7 +155,7 @@
         <item>수납용품</item>
     </string-array>
     <string-array name="EngSmall8">
-        <item>Desk</item>
+        <item>Table</item>
         <item>Bookshelf</item>
         <item>Chair</item>
         <item>Storage supplies</item>
@@ -186,7 +186,7 @@
         <item>주방수납</item>
     </string-array>
     <string-array name="EngSmall11">
-        <item>Table</item>
+        <item>Desk</item>
         <item>Chair</item>
         <item>Storage for Kitchen</item>
     </string-array>
@@ -256,7 +256,7 @@
     </string-array>
     <string-array name="EngSmall19">
         <item>Bed</item>
-        <item>Desk</item>
+        <item>Table</item>
         <item>Chair</item>
         <item>Storage closet</item>
     </string-array>

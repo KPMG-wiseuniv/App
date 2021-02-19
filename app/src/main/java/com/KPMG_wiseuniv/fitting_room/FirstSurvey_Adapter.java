@@ -1,6 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FirstSurvey_Adapter extends RecyclerView.Adapter {
-    ArrayList<String> data;
+    public static ArrayList<String> data;
     Context context;
     OnItemClickListener listener;
-
+    public static List<String> cat= Arrays.asList("Studyroom", "Furniture", "Chair", "Table");
     public interface OnItemClickListener{
-        void OnItemClick(FirstSurvey_ViewHolder holder, View view, int position);
+        void OnItemClick(FirstSurvey_ViewHolder holder, View view, int position, String cat);
     }
     public FirstSurvey_Adapter(ArrayList<String> data, Context context){
         this.data=data;
@@ -38,20 +41,32 @@ public class FirstSurvey_Adapter extends RecyclerView.Adapter {
             super(itemView);
             category_layout=itemView.findViewById(R.id.each_item_layout);
             category_item=itemView.findViewById(R.id.each_item);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int position=getAdapterPosition();
 
                     if(listener!=null){
-                        listener.OnItemClick(FirstSurvey_ViewHolder.this, v, position);
+                        listener.OnItemClick(FirstSurvey_ViewHolder.this, v, position, data.get(position));
                     }
                 }
             });
         }
         public void setItem(String item){
             category_item.setText(item);
+            int flag=0;
+            for(int i=0; i<cat.size(); i++){
+                System.out.println(cat.get(i));
+                if(cat.get(i).equals(item)){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                category_item.setTextColor(Color.LTGRAY);
+            }else if(flag==1){
+                category_item.setTextColor(Color.BLUE);
+            }
         }
 
         public void setOnItemClickListener(OnItemClickListener listener){

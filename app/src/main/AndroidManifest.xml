@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FittingRoom">
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".HistoryActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".PictureActivity" />
         <activity android:name=".ConditionSurveyActivity" />

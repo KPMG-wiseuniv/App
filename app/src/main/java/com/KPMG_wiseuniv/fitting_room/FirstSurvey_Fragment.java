@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class FirstSurvey_Fragment extends Fragment {
     FirstSurveyActivity firstactivity;
@@ -25,6 +27,7 @@ public class FirstSurvey_Fragment extends Fragment {
     String first_cat, second_cat, third_cat;//for three result of each three category
     ArrayList<String> survey_data;//items for survey
     FirstSurvey_Adapter survey_adapter;//adapter for firstsurvey_recyclerview
+    public static List<String> cat_enable= Arrays.asList("Studyroom", "Furniture", "Chair", "Table");
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -66,7 +69,18 @@ public class FirstSurvey_Fragment extends Fragment {
 
         survey_adapter.setOnItemClickListener(new FirstSurvey_Adapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(FirstSurvey_Adapter.FirstSurvey_ViewHolder holder, View view, int position) {//if user select one, then go to next question
+            public void OnItemClick(FirstSurvey_Adapter.FirstSurvey_ViewHolder holder, View view, int position, String cat) {//if user select one, then go to next question
+                int flag=0;
+                for(int i=0; i<cat_enable.size(); i++){
+                    if(cat_enable.get(i).equals(cat)){
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0){
+                    Toast.makeText(firstactivity, "Will be updated", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if(question_order==1){
                     first_cat=holder.category_item.getText().toString();
                     ManageFurniture.getInstance().getFurniture().setBig_cat(first_cat);

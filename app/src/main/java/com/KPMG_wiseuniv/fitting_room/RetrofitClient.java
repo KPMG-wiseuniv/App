@@ -10,16 +10,17 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static final String BASE_URL="api url";
+    private static final String BASE_URL="http://115.145.173.73:18080";
 
     public static RetrofitAPI getApiService(){
         return getInstance().create(RetrofitAPI.class);
     }
     private static Retrofit getInstance(){
         OkHttpClient okHttpClient=new OkHttpClient().newBuilder()
-                .connectTimeout(200, TimeUnit.SECONDS)
-                .readTimeout(200, TimeUnit.SECONDS)
-                .writeTimeout(200, TimeUnit.SECONDS)
+                .connectTimeout(150, TimeUnit.SECONDS)
+                .readTimeout(150, TimeUnit.SECONDS)
+                .writeTimeout(150, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(true)
                 .build();
         Gson gson=new GsonBuilder().setLenient().create();
         return new Retrofit.Builder()

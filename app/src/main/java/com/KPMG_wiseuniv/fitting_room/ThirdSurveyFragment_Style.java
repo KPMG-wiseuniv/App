@@ -82,7 +82,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
         styles.add(new ThirdSurveyStyleList("Modern", " This house mainly consists white, black and gray, with artificial finishes, smooth straight lines and curves.", R.drawable.style_modern));
         styles.add(new ThirdSurveyStyleList("Natural", " This house mainly consists bright brown, white, and beige colors, and has a natural texture that minimizes processing.", R.drawable.style_natural));
         styles.add(new ThirdSurveyStyleList("Northern Europe", " This house mainly consists light brown and white are the main colors, and has a natural texture such as wood, fabric, and artificial texture such as stainless steel.", R.drawable.style_northerneurope));
-        styles.add(new ThirdSurveyStyleList("Vintage & Retro", " This house mainly consists of deep, dark colors such as dark green, dark brown, and black.  Antique wooden furniture and props are often used.", R.drawable.style_vintage_retro));
+        styles.add(new ThirdSurveyStyleList("Vintage&Retro", " This house mainly consists of deep, dark colors such as dark green, dark brown, and black.  Antique wooden furniture and props are often used.", R.drawable.style_vintage_retro));
         styles.add(new ThirdSurveyStyleList("Minimal", " White and light gray are the main colors, minimizing props and decorations, and most of spaces are emptied by placing only necessary furniture.", R.drawable.style_minimalism));
 
         styleListView = (ListView) rootView.findViewById(android.R.id.list);
