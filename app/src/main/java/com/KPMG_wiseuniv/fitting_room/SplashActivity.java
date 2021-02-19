@@ -57,6 +57,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ArrayList<Imgdata>> call, Throwable t) {
                 System.out.println("server communication fail");
+                System.out.println(t);
             }
         });
     }

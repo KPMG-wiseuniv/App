@@ -106,8 +106,8 @@ public class Picture_train_Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(pictureActivity, "server communication fail", Toast.LENGTH_SHORT).show();
                 System.out.println("server communication error");
+                System.out.println(t);
             }
         });
     }
