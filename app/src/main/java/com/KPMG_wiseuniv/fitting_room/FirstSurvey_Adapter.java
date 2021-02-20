@@ -19,8 +19,8 @@ public class FirstSurvey_Adapter extends RecyclerView.Adapter {
     public static ArrayList<String> data;
     Context context;
     OnItemClickListener listener;
-    public static List<String> cat= Arrays.asList("Studyroom", "Furniture", "Chair", "Table");
-    public interface OnItemClickListener{
+    public static List<String> cat= Arrays.asList("Studyroom", "Furniture", "Chair", "Table");//activating posible category
+    public interface OnItemClickListener{//interface for each item click listener
         void OnItemClick(FirstSurvey_ViewHolder holder, View view, int position, String cat);
     }
     public FirstSurvey_Adapter(ArrayList<String> data, Context context){

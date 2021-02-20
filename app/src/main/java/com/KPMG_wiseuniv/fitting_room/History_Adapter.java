@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//Recyclerview Adapter contains list of survey history
 public class History_Adapter extends RecyclerView.Adapter {
     ArrayList<Furniture> data;
     Context context;
@@ -18,7 +19,7 @@ public class History_Adapter extends RecyclerView.Adapter {
         this.data=data;
         this.context=context;
     }
-    static final class History_ViewHolder extends RecyclerView.ViewHolder{
+    static final class History_ViewHolder extends RecyclerView.ViewHolder{//viewholder for History_Adapter
         TextView date, firstcat, style, price;
         public History_ViewHolder(@NonNull View itemView) {
             super(itemView);

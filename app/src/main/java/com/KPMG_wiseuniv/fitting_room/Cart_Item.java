@@ -1,5 +1,6 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+//class for Cart_Adapter
 public class Cart_Item {
     String name;
     String price;

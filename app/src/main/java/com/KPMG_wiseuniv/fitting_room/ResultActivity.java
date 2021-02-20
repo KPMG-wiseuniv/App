@@ -14,13 +14,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+//showing result of furniture after finishing survey and AI training
+
 public class ResultActivity extends AppCompatActivity {
     LinearLayout aimy_layout, random_layout;
     TextView result_message, random_result_message, result_detail_message;
-    RecyclerView airesult_recyclerview, myresult_recyclerview, random_recyclerview;
+    RecyclerView airesult_recyclerview, myresult_recyclerview, random_recyclerview;//recyclerview for AI result, user's choice, and just furniture category
     int dAIinterior, AIcolor, AIFD, nowchoice;
     Furniture now_furniture;
-    ArrayList<Imgdata> ai, my, random;
+    ArrayList<Imgdata> ai, my, random;//arraylist for AI result, user's choice and just furniture category
     String mybig, mymiddle, myfurniture, mystyle, myfd;
     int myprice;
     String AIinterior, AIdetail;
@@ -39,7 +41,7 @@ public class ResultActivity extends AppCompatActivity {
         setting_recyclerview();
     }
 
-    public void setting_view(){
+    public void setting_view(){//for inflate and basic setting
         aimy_layout=findViewById(R.id.aimy_layout);
         random_layout=findViewById(R.id.random_layout);
         result_message=findViewById(R.id.result_message);
@@ -66,19 +68,19 @@ public class ResultActivity extends AppCompatActivity {
         random=new ArrayList<>();
     }
 
-    public void furniture_filtering(){
-        mybig=now_furniture.getBig_cat();
-        mymiddle=now_furniture.getSec_cat();
-        myfurniture=now_furniture.getTh_cat();
-        mystyle=now_furniture.getStyle();
-        myfd=now_furniture.getFunction();
+    public void furniture_filtering(){//for choose furniture data suitable each condition
+        mybig=now_furniture.getBig_cat();//user's residential choice
+        mymiddle=now_furniture.getSec_cat();//user's category of products choice
+        myfurniture=now_furniture.getTh_cat();//user's kind of products choice
+        mystyle=now_furniture.getStyle();//user's interior choice
+        myfd=now_furniture.getFunction();//user's choice between function and design
         if (now_furniture.getPrice().equals("700+")) {
             myprice=700;
         }else{
-            myprice=Integer.parseInt(now_furniture.getPrice());
+            myprice=Integer.parseInt(now_furniture.getPrice());//user's price choice
         }
         System.out.println(mybig+" "+mymiddle+" "+myfurniture+" "+mystyle+" "+myfd+" "+myprice);
-        if(myfurniture.equals("Chair")){
+        if(myfurniture.equals("Chair")){//for setting furniture detail, chair
             if(myfd.equals("Design")){
                 if(AIFD==1){
                     AIdetail="bar chair";
@@ -95,7 +97,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
         }
-        else if(myfurniture.equals("Table")){
+        else if(myfurniture.equals("Table")){//for setting furniture detail, table
             if(myfd.equals("Design")){
                 if(AIFD==1){
                     AIdetail="bar table";
@@ -111,7 +113,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         }
 
-        for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){
+        for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){//for filtering furniture data suitable for AI result and user's choice
             Imgdata now=ManageImgdata.getInstance().getTotal_imgdata().get(i);
             if(now.getBigcategory().equals(mybig)&&now.getMiddlecategory().equals(mymiddle)
                     &&now.getFurniturename().equals(myfurniture)){
@@ -131,7 +133,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
             }
         }
-        if(ai.size()==0){
+        if(ai.size()==0){//if there's no data suitable for all three color, interior, detail, then just excepting detail
             for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){
                 Imgdata now=ManageImgdata.getInstance().getTotal_imgdata().get(i);
                 if(now.getFurniturename().equals(myfurniture)){
@@ -142,7 +144,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         }
         result_message.setText("We found "+(ai.size()+my.size())+" fitting products\nfor you!");
-        if(ai.size()+my.size()==0){
+        if(ai.size()+my.size()==0){//if there's no data suitable for both AI and user's choice, then pick data just by furniture category user chosen
             for(int i=0; i<ManageImgdata.getInstance().getTotal_imgdata().size(); i++){
                 Imgdata now=ManageImgdata.getInstance().getTotal_imgdata().get(i);
                 if(now.getBigcategory().equals(mybig)&&now.getMiddlecategory().equals(mymiddle)
@@ -154,7 +156,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void setting_recyclerview(){
-        if(ai.size()+my.size()!=0){
+        if(ai.size()+my.size()!=0){//setting recyclerview of AI and user's choice
             LinearLayoutManager ailayoutmanager=new GridLayoutManager(this, 2);
             LinearLayoutManager mylayoutmanager=new GridLayoutManager(this, 2);
             aiadapter=new AIResult_Adapter(ai, this);
@@ -181,7 +183,7 @@ public class ResultActivity extends AppCompatActivity {
             aimy_layout.setVisibility(View.VISIBLE);
             random_layout.setVisibility(View.GONE);
         }
-        else{
+        else{//setting recyclerview of just by furniture category
             LinearLayoutManager randomlayoutmanager=new GridLayoutManager(this, 2);
             randomadapter=new Random_Adapter(random, this);
             random_recyclerview.setLayoutManager(randomlayoutmanager);

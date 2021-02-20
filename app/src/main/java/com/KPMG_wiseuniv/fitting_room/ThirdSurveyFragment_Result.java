@@ -16,11 +16,8 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ThirdSurveyFragment_Result#newInstance} factory method to
- * create an instance of this fragment.
- */
+//fragment for showing result of second survey
+
 public class ThirdSurveyFragment_Result extends Fragment {
 
     ConditionSurveyActivity activity;
@@ -82,7 +79,7 @@ public class ThirdSurveyFragment_Result extends Fragment {
         return view;
     }
 
-    public void setting_ok_button(Button btn){
+    public void setting_ok_button(Button btn){//setting ok button that go to next step
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +103,7 @@ public class ThirdSurveyFragment_Result extends Fragment {
         });
     }
 
-    public void setting_again_button(Button btn){
+    public void setting_again_button(Button btn){//setting back button that back to first category of second survey
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

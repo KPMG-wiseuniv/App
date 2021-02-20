@@ -1,5 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+//class for store furniture data from server by Splash
+
 public class Imgdata {
     String imgname;
     String bigcategory;

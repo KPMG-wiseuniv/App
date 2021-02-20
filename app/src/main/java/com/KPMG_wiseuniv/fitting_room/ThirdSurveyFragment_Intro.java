@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+//fragment for introducing way of second survey
+
 public class ThirdSurveyFragment_Intro extends Fragment {
 
     ConditionSurveyActivity activity;

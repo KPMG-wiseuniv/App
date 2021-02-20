@@ -1,13 +1,14 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+//class for store result of survey
 public class Furniture {
-    String date;
+    String date;//survey date
     String big_cat;
     String sec_cat;
-    String th_cat;
+    String th_cat;//big_cat, sec_cat, th_cat for first category survey
     String style;
     String function;
-    String price;
+    String price;//sytle, function, price for second survey
 
     public Furniture(){}
     public Furniture(String date, String big_cat, String sec_cat, String th_cat, String style, String function, String price) {

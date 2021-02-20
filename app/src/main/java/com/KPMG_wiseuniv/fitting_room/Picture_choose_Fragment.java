@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+//fragment that choosing room picture from gallery or camera
+
 public class Picture_choose_Fragment extends Fragment {
     PictureActivity pictureActivity;
 
@@ -39,9 +41,9 @@ public class Picture_choose_Fragment extends Fragment {
     ImageView background, explain_img;
     TextView picture_ment, explain_text, warning;
     Button gallery, camera;
-    Uri selected_img;
-    Bitmap selected_bitmap;
-    String mCurrentPhtoPath;
+    Uri selected_img;//Uri for selected image
+    Bitmap selected_bitmap;//Bitmap for selected image
+    String mCurrentPhtoPath;//image abosolute path for camera
 
     int which=0;
     @Override
@@ -213,7 +215,7 @@ public class Picture_choose_Fragment extends Fragment {
             }
         }
     }
-    public File createImageFile() throws IOException {
+    public File createImageFile() throws IOException {//for create file storage for image from camera
         String timeStamp=new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName="JPEG_"+timeStamp+"_";
         File storageDir=pictureActivity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -227,7 +229,7 @@ public class Picture_choose_Fragment extends Fragment {
         return image;
     }
 
-    private void dispatchTakePictureIntent() throws IOException {
+    private void dispatchTakePictureIntent() throws IOException {//for activate camera intent and get image from camera
         Intent takePictureintent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureintent.resolveActivity(pictureActivity.getPackageManager())!=null) {
             File photoFile=null;

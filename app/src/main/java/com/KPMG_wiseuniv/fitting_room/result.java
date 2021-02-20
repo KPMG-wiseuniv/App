@@ -1,9 +1,11 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+//class for AI result from server
+
 public class result {
-    int interior;
-    int color;
-    int FD;
+    int interior;//interior style from AI result
+    int color;//suitable color from AI result
+    int FD;//furniture detail from AI result
     public result(){}
 
     public result(int interior, int color, int FD) {

@@ -22,7 +22,7 @@ public class ConditionSurveyActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.ContentLayout, ThirdSurveyFragment_Intro.newInstance()).commit();
     }
 
-    public void replaceFragment(Fragment fragment) {
+    public void replaceFragment(Fragment fragment) {//for changing Fragment by click next survey button
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.ContentLayout, fragment).commit();

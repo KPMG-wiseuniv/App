@@ -15,9 +15,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+//this is main page that appear right after Splash
+
 public class MainActivity extends AppCompatActivity {
-    HomeFragment homeFragment;
-    ShopFragment shopFragment;
+    HomeFragment homeFragment;//for home
+    ShopFragment shopFragment;//for cart
     LinearLayout home_tab_layout;
     RelativeLayout shop_tab_layout;
     ImageView home_tab, shop_tab;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setting_fragment();
         setting_clicklistener();
     }
-    public void setting_view(){
+    public void setting_view(){//for inflate and basic setting
         home_tab_layout=findViewById(R.id.home_tab_layout);
         shop_tab_layout=findViewById(R.id.shop_tab_layout);
         home_tab=findViewById(R.id.home_tab);
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         ManageFurniture.getInstance();
     }
 
-    public void setting_fragment(){
+    public void setting_fragment(){//setting fragment
         homeFragment=new HomeFragment();
         shopFragment=new ShopFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.main_container, homeFragment).commit();
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setting_clicklistener(){
-        home_tab_layout.setOnClickListener(new View.OnClickListener() {
+        home_tab_layout.setOnClickListener(new View.OnClickListener() {//for showing home page
             @Override
             public void onClick(View v) {
                 getSupportFragmentManager().beginTransaction().show(homeFragment).commit();
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 Glide.with(getApplicationContext()).load(R.drawable.cart_off).into(shop_tab);
             }
         });
-        shop_tab_layout.setOnClickListener(new View.OnClickListener() {
+        shop_tab_layout.setOnClickListener(new View.OnClickListener() {//for showing cart page
             @Override
             public void onClick(View v) {
                 getSupportFragmentManager().beginTransaction().show(shopFragment).commit();

@@ -14,6 +14,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+//if there's no result suits for survey, AI result, showing just by furniture category user chose
+//Recyclerview Adapter contains list of furniture category user chose
+
 public class Random_Adapter extends RecyclerView.Adapter {
     ArrayList<Imgdata> data;
     public static Context context;
@@ -36,7 +39,7 @@ public class Random_Adapter extends RecyclerView.Adapter {
     }
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//viewholder for Random_Adapter
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v=inflater.inflate(R.layout.result_item, parent, false);
         return new Random_ViewHolder(v);

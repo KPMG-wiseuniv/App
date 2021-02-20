@@ -41,7 +41,7 @@ public class FinishSurvey_Fragment extends Fragment {
         return v;
     }
 
-    public void setting_view(View v){
+    public void setting_view(View v){//for inflation and basic setting
         second_choice=v.findViewById(R.id.second_choice);
         third_choice=v.findViewById(R.id.third_choice);
         firstsurvey_okbtn=v.findViewById(R.id.firstsurvey_okbtn);
@@ -54,7 +54,7 @@ public class FinishSurvey_Fragment extends Fragment {
         second_choice.setText(surveyActivity.getSecond_cat());
         third_choice.setText(surveyActivity.getThird_cat());
     }
-    public void setting_okbtn(){
+    public void setting_okbtn(){//setting button listener moving to next survey
         firstsurvey_okbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,7 @@ public class FinishSurvey_Fragment extends Fragment {
         });
     }
 
-    public void setting_backbtn(){
+    public void setting_backbtn(){//setting button listener moving back to first survey
         firstsurvey_backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

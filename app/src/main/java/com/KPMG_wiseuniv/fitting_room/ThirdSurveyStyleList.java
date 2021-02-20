@@ -1,5 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+//class for ThirdSurveyStyleAdapter(ArrayAdapter)
+
 public class ThirdSurveyStyleList {
     String style;
     String desc;

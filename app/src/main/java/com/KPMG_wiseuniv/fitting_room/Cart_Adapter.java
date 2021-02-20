@@ -12,12 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//RecyclerView Adapter contains list of items in cart, it's just for UX/UI
 public class Cart_Adapter extends RecyclerView.Adapter {
     ArrayList<Cart_Item> data;
     Context context;
     OnCartItemClickListener listener;
 
-    public interface OnCartItemClickListener{
+    public interface OnCartItemClickListener{//interface for deleting item in cart
         void deleteItemClick(CartViewHolder holder, View view, int position);
     }
 
@@ -30,7 +31,7 @@ public class Cart_Adapter extends RecyclerView.Adapter {
         this.listener=listener;
     }
 
-    static final class CartViewHolder extends RecyclerView.ViewHolder{
+    static final class CartViewHolder extends RecyclerView.ViewHolder{//viewholder for Cart_Adapter
         TextView product_name;
         TextView product_price;
         ImageView product_delete_btn;

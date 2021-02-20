@@ -17,10 +17,11 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 
+//fragment for home
 public class HomeFragment extends Fragment {
     MainActivity mainActivity;
-    ViewFlipper home_viewflipper;
-    ImageView home_img1, home_img2, home_img3;
+    ViewFlipper home_viewflipper;//this is for automatic moving of 3 images, home_img1, home_img2, home_img3
+    ImageView home_img1, home_img2, home_img3;//3 images that automatic moving
     RelativeLayout start_fittingroom_btn;
     RelativeLayout fittingroom_history_btn;
     @Override
@@ -47,7 +48,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
-    public void setting_view(View v){
+    public void setting_view(View v){//for inflate and basic setting
         home_viewflipper=v.findViewById(R.id.home_viewflipper);
         home_img1=v.findViewById(R.id.home_img1);
         home_img2=v.findViewById(R.id.home_img2);
@@ -56,7 +57,7 @@ public class HomeFragment extends Fragment {
         fittingroom_history_btn=v.findViewById(R.id.fittingroom_history_btn);
     }
 
-    public void setting_viewflipper(){
+    public void setting_viewflipper(){//for setting viewflipper, automatic moving 3 images
         Glide.with(mainActivity).load(R.drawable.home_img1).into(home_img1);
         Glide.with(mainActivity).load(R.drawable.home_img2).into(home_img2);
         Glide.with(mainActivity).load(R.drawable.home_img3).into(home_img3);
@@ -66,7 +67,7 @@ public class HomeFragment extends Fragment {
         home_viewflipper.setOutAnimation(getContext(), android.R.anim.slide_out_right);
     }
 
-    public void setting_start_fittingroom_btn(){
+    public void setting_start_fittingroom_btn(){//start survey button
         start_fittingroom_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +76,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    public void setting_fittingroom_history_btn(){
+    public void setting_fittingroom_history_btn(){//for seeing survey history
         fittingroom_history_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

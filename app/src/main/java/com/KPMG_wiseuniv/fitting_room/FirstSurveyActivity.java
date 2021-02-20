@@ -16,8 +16,8 @@ import java.util.Arrays;
 import static android.os.SystemClock.sleep;
 
 public class FirstSurveyActivity extends AppCompatActivity {
-    FirstSurvey_Fragment survey_fragment;
-    FinishSurvey_Fragment finish_fragment;
+    FirstSurvey_Fragment survey_fragment;//fragment for three category survey
+    FinishSurvey_Fragment finish_fragment;//fragment for showing result of three category survey
     String second_cat=null;
     String third_cat=null;
     @Override
@@ -30,7 +30,7 @@ public class FirstSurveyActivity extends AppCompatActivity {
 
     }
 
-    public void setting_fragment(){
+    public void setting_fragment(){//for inflate fragment on memory
         survey_fragment=new FirstSurvey_Fragment();
         finish_fragment=new FinishSurvey_Fragment();
 
@@ -39,14 +39,14 @@ public class FirstSurveyActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().hide(finish_fragment).commit();
     }
 
-    public void finish_firstsurvey(){
+    public void finish_firstsurvey(){//for showing result of three category survey
         sleep(500);
         getSupportFragmentManager().beginTransaction().hide(survey_fragment).commit();
         getSupportFragmentManager().beginTransaction().show(finish_fragment).commit();
         finish_fragment.setting_result();
     }
 
-    public void backtosurvey(){
+    public void backtosurvey(){//for back to survey
         getSupportFragmentManager().beginTransaction().hide(finish_fragment).commit();
         getSupportFragmentManager().beginTransaction().show(survey_fragment).commit();
         second_cat=null;

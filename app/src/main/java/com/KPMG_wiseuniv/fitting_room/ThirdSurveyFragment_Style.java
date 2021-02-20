@@ -14,6 +14,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+//fragment for choosing preferred style(interior)
+
 public class ThirdSurveyFragment_Style extends ListFragment {
 
     ArrayList<ThirdSurveyStyleList> styles;
@@ -61,7 +63,7 @@ public class ThirdSurveyFragment_Style extends ListFragment {
 
     // Send clicked style text
     @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
+    public void onListItemClick(ListView l, View v, int position, long id) {//getting chosen style
         //get Text
         String result = styles.get(position).getStyle();
         activity.setStyle(result);
