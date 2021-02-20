@@ -69,6 +69,8 @@ Permissions에 경우 갤러리에서 이미지를 가지고 오기 위한 저�
 + Android RetrofitAPI<br>
   + @GET("send_imgdata/")<br>
     Call<ArrayList<Imgdata>> get_imgdata();<br><br>
+  
+  
 2)사진 전송 API(POST)
 + 사용자가 업로드한 방 사진을 서버에서 받기 위한 API<br>
 + Android RetrofitAPI<br>
@@ -77,12 +79,16 @@ Permissions에 경우 갤러리에서 이미지를 가지고 오기 위한 저�
     Call<Void> send_img(@Part MultipartBody.Part image,<br>
                         @Part("imgname") String imgname,<br>
                         @Part("Furniture") String Furniture,<br>
-                        @Part("FD") String FD);<br>
+                        @Part("FD") String FD);<br><br>
+  
+  
 3)인공지능 학습 결과 가져오기 API(GET)
 + 업로드한 방 사진을 인공지능 학습을 통해 얻은 결과값을 어플리케이션으로 가져오기 위한 API<br>
 + Android RetrofitAPI<br>
   + @GET("send_train_result/")<br>
-    Call<result> get_result();<br>
+    Call<result> get_result();<br><br>
+  
+  
 4)API Server(URL)
 https://github.com/KPMG-wiseuniv/ApiServer/blob/main/README.md
   
