@@ -27,98 +27,10 @@ COVID-19가 전 세계적인 영향을 미치며, 자유로운 외부 활동이 
 
 마지막으로, 가구뿐만 아니라 최근 더욱 수요가 높아지고 있는 '맞춤형 가전 시장’으로의 확장성도 기대할 수 있을 것입니다. 집 꾸미기의 일종으로 가전을 바라보는 시각이 늘어나며, 삼성, LG와 같은 글로벌 기업들은 소비자 개개인의 라이프스타일에 맞춤화 된 가전 라인을 선보이고 있습니다. 이에 ‘Fitting Room’은 소비자와 가장 가까이 맞닿아 있는 플랫폼으로, 맞춤형 가전 시장의 보편화에 기여할 수 있을 뿐만 아니라, 잠재고객의 라이프스타일에 대한 데이터를 통해 더욱 고도화된 맞춤형 가전을 기획할 수 있는 인사이트를 제공할 수 있을 것입니다. 
 
-# 안드로이드 어플리케이션 설명
-
-## 1. Introduction
-본 서비스는 안드로이드 어플리케이션으로 개발된 서비스입니다. 따라서, Android용 APK 파일을 받을 수 있는 기종에서 테스트 가능합니다.
-
-## 2. Service
-+ 가구 종류, 원하는 방 스타일, 기능과 디자인의 비중, 가격 등을 사용자가 설문을 진행하게 됩니다.
-+ 설문조사가 완료된 후 사용자는 자신의 방사진을 카메라를 통해 촬영하거나 갤러리에 있는 이미지로 가지고 오게 됩니다.
-+ 가지고 온 이미지는 서버를 통해 전송되어 미리 학습된 인공지능 모델을 통해 학습됩니다.
-+ 학습 결과로 방에 어울리는 색상, 스타일, 구체적 가구 카테고리가 도출됩니다.
-+ 이를 바탕으로 총 두 가지로 결과를 보여줍니다.
-+ 사용자의 설문만을 바탕으로 한 결과와 인공지능 학습 결과만을 바탕으로 한 결과가 나오게 됩니다.
-
-## 3. Development Environment
-+ Android Studio @4.0
-+ Linux Server
-+ sqlLite3
-+ Django
-
-## 4. Application Version
-+ compileSdkVersion 30
-+ minSdkVersion 16
-+ targetSdkVersion 30
-
-## 5. Dependencies
-+ Glide 4.11.0
-+ Retrofit 2.9.0
-+ Gson 2.9.0
-
-## 6. Permissions
-+ android.permission.READ_EXTERNAL_STORAGE
-+ android.permission.WRITE_EXTERNAL_STORAGE
-+ android.permission.CAMERA
-+ android.permission.INTERNET<br>
-
-**Permissions에 경우 갤러리에서 이미지를 가지고 오기 위한 저장공간, 카메라 실행을 위한 카메라 권한이 필요한데 현재 어플리케이션은 출시용이 아닌 프로토타입용 이기 때문에 apk 설치 파일을 통해 앱을 실행하고자 하는 분들은 앱 실행 전 "저장공간, 카메라" 두가지 권한에 대해 "허용", 혹은 "앱 실행시 허용"을 설정해주시고 실행해주시기 바랍니다.**
-
-## 7. RESTful API
-1)가구 데이터 가져오기 API(GET)
-+ 최종 결과로 보여줄 가구 상품 데이터를 어플리케이션으로 가져오기 위한 API<br>
-+ Android RetrofitAPI<br>
-  + @GET("send_imgdata/")<br>
-    Call<ArrayList<Imgdata>> get_imgdata();<br><br>
+# Installation
 
 
-2)사진 전송 API(POST)
-+ 사용자가 업로드한 방 사진을 서버에서 받기 위한 API<br>
-+ Android RetrofitAPI<br>
-  + @Multipart<br>
-    @POST("train_img/")<br>
-    Call<Void> send_img(@Part MultipartBody.Part image,<br>
-                        @Part("imgname") String imgname,<br>
-                        @Part("Furniture") String Furniture,<br>
-                        @Part("FD") String FD);<br><br>
+# Operation
 
 
-3)인공지능 학습 결과 가져오기 API(GET)
-+ 업로드한 방 사진을 인공지능 학습을 통해 얻은 결과값을 어플리케이션으로 가져오기 위한 API<br>
-+ Android RetrofitAPI<br>
-  + @GET("send_train_result/")<br>
-    Call<result> get_result();<br><br>
-
-
-4)API Server(URL)<br>
-https://github.com/KPMG-wiseuniv/ApiServer/blob/main/README.md
-
-## 8. Server Limitation
-본 어플리케이션은 출시용이 아닌 프로토타입 테스트용이기 때문에 서버에 제한이 있습니다. 무한정으로 서버를 켜둘 수 없기 때문에 만약 apk 파일을 통해 직접 설치하여 어플리케이션을 테스트하고 싶으신 분들은 11 AM ~ 10PM의 시간을 이용해 주시기 바랍니다. 그 이외의 시간은 서버 점검 및 중지 중이기 때문에 어플리케이션이 제대로 작동하지 않을 예정입니다.
-
-## 9. List of devices doing TEST
-+ Pixel 2 Android 10.0 API 29(Android Emulator)
-+ Nexus 5X Android 10.0 API 29(Android Emulator)
-+ Galaxy 6 Android 6.0.1 API 23
-+ Galaxy Note 9 Android 10.0 API 29
-+ Galaxy Note 10 Android 10.0 API 29
-+ Galaxy S9+ Android 8.0 API 26
-+ Galaxy S9 Android 10.0 API 29
-
-## 10. Image
-이미지는 Dependencies에서 언급했듯이 Glide를 사용하였습니다.
-
-## 11. Flow
-1)앱을 실행하면 Splash 가 실행되고 서버로부터 @GET("send_imgdata/") 를 통해서 가구 데이터를 가져옵니다.<br>
-2)Home 화면이 나오면 Start Fitting Room 을 버튼을 눌러 실행합니다.<br>
-3)설문 과정에 따라서 설명을 읽고 설문조사를 진행합니다.<br>
-4)사진 첨부 화면이 나오면 갤러리 혹은 카메라를 실행하여 사진을 업로드합니다.<br>
-단, 반드시 앞서 언급했던 저장공간, 카메라 권한 설정을 사전에 해주셔야 합니다.<br>
-또한, 프로토타입용이기 때문에 모든 기기에 대한 테스트가 불가하기에 만약 카메라 작동이 안된다면 갤러리로 실행해 주시길 바랍니다.<br>
-5)학습을 진행하면 사진이 @POST("train_img/")을 통해서 서버로 전송됩니다.<br>
-6)사진이 제대로 전송되면 곧바로 @GET("send_train_result/")을 통해서 서버에서 학습이 이루어지고 그 결과를 받게 됩니다.<br>
-7)학습에는 네트워크 상태에 따라 최소 25초에서 50초 정도까지 소요됩니다.<br>
-8)학습 완료 후 설문조사와 인공지능 학습 결과에 맞는 가구 리스트가 나오게 됩니다.<br><br>
-
-## 12. Business
-본 어플리케이션의 비즈니스적 확장성을 위하여 장바구니, 결제 화면을 만들어 놓았습니다. 만약 확장하여 실제 출시하게 된다면 본 어플리케이션의 인공지능 기술을 이용하여 여러 가구 업체와 컨택함으로써 실제 가구 결제까지 이어질 수 있는 비즈니스적 확장성을 보여주기 위하여 화면만 구현해 놓았습니다.
+# Technologies Used
