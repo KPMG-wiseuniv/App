@@ -13,6 +13,8 @@ public class PictureActivity extends AppCompatActivity {
     Picture_choose_Fragment choose_fragment;
     Picture_train_Fragment train_fragment;
     Uri selected;
+    int select;
+    String picture_path;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +39,13 @@ public class PictureActivity extends AppCompatActivity {
 
     public void setSelected(Uri selected) {
         this.selected = selected;
+    }
+
+    public void setSelect(int select) {
+        this.select = select;
+    }
+
+    public void setPicture_path(String picture_path) {
+        this.picture_path = picture_path;
     }
 }

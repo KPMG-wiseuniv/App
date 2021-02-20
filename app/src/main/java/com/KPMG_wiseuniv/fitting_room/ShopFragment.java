@@ -70,10 +70,10 @@ public class ShopFragment extends Fragment {
 
     public void setting_cart_item(){
         data=new ArrayList<>();
-        data.add(new Cart_Item("First Product", "$100", Float.parseFloat("100")));
-        data.add(new Cart_Item("Second Product", "$200", Float.parseFloat("200")));
-        data.add(new Cart_Item("Third Product", "$300", Float.parseFloat("300")));
-        total=600;
+//        data.add(new Cart_Item("First Product", "$100", Float.parseFloat("100")));
+//        data.add(new Cart_Item("Second Product", "$200", Float.parseFloat("200")));
+//        data.add(new Cart_Item("Third Product", "$300", Float.parseFloat("300")));
+        total=0;
         cart_totalprice.setText("$"+total);
         mainActivity.setting_cartcount(data.size());
     }

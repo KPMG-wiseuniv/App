@@ -76,12 +76,13 @@ Refer to the example below for\ndistance and composition"
                 android:backgroundTint="@color/black"/>
         </LinearLayout>
         <TextView
+            android:id="@+id/picture_warning"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="※If return to this page after CAMERA\nplease upload picture you took before\n by GALLERY button"
+            android:text="※If CAMERA didn't work\nplease upload picture by GALLERY"
             android:textColor="#FFFFFF"
-            android:textSize="13sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center"/>
 

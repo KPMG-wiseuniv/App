@@ -60,7 +60,15 @@ public class Picture_train_Fragment extends Fragment {
     }
     public void uploadImage(){
         RetrofitAPI myAPI=RetrofitClient.getApiService();
-        String imagepath=getPath(pictureActivity.selected);
+        String imagepath=null;
+//        if(pictureActivity.select==0){
+//            imagepath=getPath(pictureActivity.selected);
+//        }
+//        else{
+//            imagepath=pictureActivity.picture_path;
+//        }
+        imagepath=getPath(pictureActivity.selected);
+        System.out.println(imagepath);
         File file=new File(imagepath);
         RequestBody requestFile=RequestBody.create(MediaType.parse("image/*"), file);
         String imgname=getRandomStr();

@@ -65,7 +65,7 @@ public class FirstSurvey_Adapter extends RecyclerView.Adapter {
             if(flag==0){
                 category_item.setTextColor(Color.LTGRAY);
             }else if(flag==1){
-                category_item.setTextColor(Color.BLUE);
+                category_item.setTextColor(Color.parseColor("#5E35B1"));
             }
         }
 

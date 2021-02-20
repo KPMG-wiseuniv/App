@@ -40,7 +40,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.home_fragment, container, false);
 
-        Toast.makeText(mainActivity, ManageImgdata.getInstance().getTotal_imgdata().size()+"개", Toast.LENGTH_SHORT).show();
         setting_view(v);
         setting_viewflipper();
         setting_start_fittingroom_btn();

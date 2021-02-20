@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.ImageDecoder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +21,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Picture_choose_Fragment extends Fragment {
     PictureActivity pictureActivity;
@@ -30,11 +37,11 @@ public class Picture_choose_Fragment extends Fragment {
     private static final int GALLERY_CODE=1001;//for gallery
     private static final int CAMERA_CODE=1002;//for camera
     ImageView background, explain_img;
-    TextView picture_ment, explain_text;
+    TextView picture_ment, explain_text, warning;
     Button gallery, camera;
     Uri selected_img;
     Bitmap selected_bitmap;
-    int want_height=256, want_width=256;//for room picture resizing size
+    String mCurrentPhtoPath;
 
     int which=0;
     @Override
@@ -71,6 +78,7 @@ public class Picture_choose_Fragment extends Fragment {
         camera=v.findViewById(R.id.camera_btn);
         explain_img=v.findViewById(R.id.explain_img);
         explain_text=v.findViewById(R.id.explain_text);
+        warning=v.findViewById(R.id.picture_warning);
     }
 
     public void setting_change(){//if which==0, activate upload function
@@ -80,6 +88,7 @@ public class Picture_choose_Fragment extends Fragment {
             picture_ment.setText("Alright!\n\nPlease upload the photo of room\nplanning to decorate");
             picture_ment.setShadowLayer(0, 0, 0, 0);
             explain_text.setText("Photo must include the space the\nfurniture will be placed and props\nsurrounding.\nRefer to the example below for\ndistance and composition");
+            warning.setVisibility(View.VISIBLE);
             Glide.with(pictureActivity).load((Bitmap) null).into(background);
             Glide.with(pictureActivity).load(R.drawable.main_background).into(background);
             Glide.with(pictureActivity).load(R.drawable.explain_picture).into(explain_img);
@@ -90,7 +99,13 @@ public class Picture_choose_Fragment extends Fragment {
             picture_ment.setText("Your photo is uploaded.\nShall we move on to the next step?");
             picture_ment.setShadowLayer(10, 10, 10, Color.parseColor("#000000"));
             explain_text.setText("");
+            warning.setVisibility(View.GONE);
             Glide.with(pictureActivity).load((Bitmap)null).into(background);
+//            if(pictureActivity.select==0){
+//                Glide.with(pictureActivity).load(selected_img).into(background);
+//            }else{
+//                Glide.with(pictureActivity).load(selected_bitmap).into(background);
+//            }
             Glide.with(pictureActivity).load(selected_img).into(background);
             Glide.with(pictureActivity).load((Bitmap)null).into(explain_img);
         }
@@ -118,13 +133,10 @@ public class Picture_choose_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(which==0){
-                    if(pictureActivity.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
-                        Intent cameraintent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        startActivityForResult(cameraintent, CAMERA_CODE);
-                    }
-                    else{
-                        Toast.makeText(pictureActivity, "No camera on this device", Toast.LENGTH_SHORT).show();
-                        return;
+                    try {
+                        dispatchTakePictureIntent();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
                 else if(which==1){
@@ -142,6 +154,7 @@ public class Picture_choose_Fragment extends Fragment {
             if(requestCode==GALLERY_CODE){//for gallery
                 if(data.getData()!=null){
                     selected_img=data.getData();
+                    pictureActivity.setSelect(0);
                     try {
                         selected_bitmap= MediaStore.Images.Media.getBitmap(pictureActivity.getContentResolver(), selected_img);
                     } catch (IOException e) {
@@ -152,22 +165,78 @@ public class Picture_choose_Fragment extends Fragment {
                 }
             }
             else if(requestCode==CAMERA_CODE){//for camera
-                if(data.getData()!=null){
-                    selected_img=data.getData();
-                    try {
-                        selected_bitmap= MediaStore.Images.Media.getBitmap(pictureActivity.getContentResolver(), selected_img);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+//                if(data.hasExtra("data")){
+////                    selected_img=data.getData();
+////                    try {
+////                        selected_bitmap= MediaStore.Images.Media.getBitmap(pictureActivity.getContentResolver(), selected_img);
+////                    } catch (IOException e) {
+////                        e.printStackTrace();
+////                    }
+//                    Bundle extras=data.getExtras();
+//                    selected_bitmap=(Bitmap)extras.get("data");
+//                    if(selected_bitmap!=null){
+//                        which=1;
+//                        setting_change();
+//                    }
+//                }
+//                File file=new File(mCurrentPhtoPath);
+//                if(Build.VERSION.SDK_INT>=29){
+//                    ImageDecoder.Source source=ImageDecoder.createSource(pictureActivity.getContentResolver(), Uri.fromFile(file));
+//                    try {
+//                        selected_bitmap=ImageDecoder.decodeBitmap(source);
+//                        if(selected_bitmap!=null){
+//                            pictureActivity.setSelect(1);
+//                            which=1;
+//                            setting_change();
+//                        }
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }else{
+//                    try {
+//                        selected_bitmap=MediaStore.Images.Media.getBitmap(pictureActivity.getContentResolver(), Uri.fromFile(file));
+//                        if(selected_bitmap!=null){
+//                            pictureActivity.setSelect(1);
+//                            which=1;
+//                            setting_change();
+//                        }
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+                File file=new File(mCurrentPhtoPath);
+                selected_img=Uri.fromFile(file);
+                if(selected_img!=null){
                     which=1;
                     setting_change();
                 }
             }
         }
     }
+    public File createImageFile() throws IOException {
+        String timeStamp=new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName="JPEG_"+timeStamp+"_";
+        File storageDir=pictureActivity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image=File.createTempFile(
+                imageFileName,
+                ".jpg",
+                storageDir
+        );
+        mCurrentPhtoPath=image.getAbsolutePath();
+        pictureActivity.setPicture_path(mCurrentPhtoPath);
+        return image;
+    }
 
-    public void resize(){//for resizing uploaded picture
-        selected_bitmap=Bitmap.createScaledBitmap(selected_bitmap, want_width, want_height, true);
-
+    private void dispatchTakePictureIntent() throws IOException {
+        Intent takePictureintent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureintent.resolveActivity(pictureActivity.getPackageManager())!=null) {
+            File photoFile=null;
+            photoFile=createImageFile();
+            if(photoFile!=null){
+                selected_img= FileProvider.getUriForFile(pictureActivity, pictureActivity.getPackageName(), photoFile);
+                takePictureintent.putExtra(MediaStore.EXTRA_OUTPUT, selected_img);
+                startActivityForResult(takePictureintent, CAMERA_CODE);
+            }
+        }
     }
 }

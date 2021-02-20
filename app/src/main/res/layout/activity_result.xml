@@ -13,7 +13,7 @@
             android:id="@+id/result_message"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:text="We found 36 fitting products\nfor you!"
             android:textSize="20sp"
             android:gravity="center"/>
@@ -21,13 +21,13 @@
             android:id="@+id/result_detail_message"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1.5"
             android:textSize="15sp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:text="Recommendations on your preference"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -37,11 +37,11 @@
             android:id="@+id/my_result_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"/>
+            android:layout_weight="3.25"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:text="Recommendations on your present room"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -51,14 +51,7 @@
             android:id="@+id/ai_result_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:src="@drawable/logo_black"
-            android:paddingTop="25dp"
-            android:scaleType="fitCenter"/>
+            android:layout_weight="3.25"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/random_layout"

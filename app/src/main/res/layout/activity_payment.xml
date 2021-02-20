@@ -10,6 +10,7 @@
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_weight="1.5"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/logo_black" />
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path
+        name="cached_files"
+        path="."/>
+    <external-path
+        name="my_images"
+        path="Android/data/com.KPMG_wiseuniv.fitting_room/files/Pictures"/>
+    <root-path
+        name="root"
+        path="."/>
+</paths>

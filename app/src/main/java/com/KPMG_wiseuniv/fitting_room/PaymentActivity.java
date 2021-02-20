@@ -21,7 +21,7 @@ public class PaymentActivity extends AppCompatActivity {
         total_payment=findViewById(R.id.total_payment);
 
         Intent intent=getIntent();
-        item_charge.setText(Float.toString(intent.getIntExtra("cnt", 0)));
+        item_charge.setText(Float.toString(intent.getIntExtra("total", 0)));
         total_payment.setText(Float.toString(intent.getFloatExtra("total", 0)));
     }
 }
