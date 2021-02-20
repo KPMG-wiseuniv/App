@@ -14,9 +14,11 @@ import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface RetrofitAPI {
+    //API for getting furniture data from server
     @GET("send_imgdata/")
     Call<ArrayList<Imgdata>> get_imgdata();
 
+    //API for sending image to server
     @Multipart
     @POST("train_img/")
     Call<Void> send_img(@Part MultipartBody.Part image,
@@ -24,6 +26,7 @@ public interface RetrofitAPI {
                         @Part("Furniture") String Furniture,
                         @Part("FD") String FD);
 
+    //API for getting AI training result from server
     @GET("send_train_result/")
     Call<result> get_result();
 }

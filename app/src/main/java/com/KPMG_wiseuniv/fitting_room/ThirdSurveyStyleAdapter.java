@@ -16,6 +16,8 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.ArrayList;
 import java.util.List;
 
+//ArrayAdapter for showing list of style(interior)
+
 public class ThirdSurveyStyleAdapter extends ArrayAdapter implements AdapterView.OnItemClickListener {
 
     private Context context;
@@ -39,7 +41,7 @@ public class ThirdSurveyStyleAdapter extends ArrayAdapter implements AdapterView
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {//setting each item of ArrayAdapter
         final ViewHolder viewHolder;
 
         if (convertView == null){

@@ -13,6 +13,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//first page when running application
+//in Splash, getting furniture data from server
 
 public class SplashActivity extends AppCompatActivity {
     RetrofitAPI myAPI;
@@ -31,11 +33,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void get_Image_data(){
-        Call<ArrayList<Imgdata>> getimgdata=myAPI.get_imgdata();
+        Call<ArrayList<Imgdata>> getimgdata=myAPI.get_imgdata();//for getting furniture data from server
         getimgdata.enqueue(new Callback<ArrayList<Imgdata>>() {
             @Override
             public void onResponse(Call<ArrayList<Imgdata>> call, Response<ArrayList<Imgdata>> response) {
-                if(response.isSuccessful()){
+                if(response.isSuccessful()){//when getting furniture data from server successfully
                     for(Imgdata item: response.body()){
                         item.setImage(RetrofitClient.getBaseUrl()+item.getImage());
                         total.add(item);

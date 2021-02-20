@@ -2,6 +2,8 @@ package com.KPMG_wiseuniv.fitting_room;
 
 import java.util.ArrayList;
 
+//singleton class that store furniture data from server in Splash
+
 public class ManageImgdata {
     private static ManageImgdata manageImgdata=null;
     Imgdata imgdata;

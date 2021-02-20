@@ -2,6 +2,8 @@ package com.KPMG_wiseuniv.fitting_room;
 
 import java.util.ArrayList;
 
+//singleton class that store survey result history
+
 public class ManageFurniture {
     private static ManageFurniture manageFurniture=null;
     Furniture furniture;
@@ -41,7 +43,7 @@ public class ManageFurniture {
         this.total_furniture = total_furniture;
     }
 
-    public void addnewdata(Furniture newdata){
+    public void addnewdata(Furniture newdata){//add new survey history
         this.total_furniture.add(newdata);
     }
 

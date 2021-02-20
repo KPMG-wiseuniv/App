@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+//fragment for choosing between function and design
+
 public class ThirdSurveyFragment_Function extends Fragment {
     ConditionSurveyActivity activity;
 

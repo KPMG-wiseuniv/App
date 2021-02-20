@@ -15,11 +15,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ThirdSurveyFragment_Charge#newInstance} factory method to
- * create an instance of this fragment.
- */
+//Fragment for choosing preferred price
+
 public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSeekBarChangeListener {
     private TextView money;
     ConditionSurveyActivity activity;
@@ -70,9 +67,9 @@ public class ThirdSurveyFragment_Charge extends Fragment implements SeekBar.OnSe
     }
 
     @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {//setting price text
         money.setText("" + progress);
-        if(progress==700){
+        if(progress==700){//when choose maximum price, then append +
             money.append("+");
         }
     }

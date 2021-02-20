@@ -191,7 +191,7 @@ public class FirstSurvey_Fragment extends Fragment {
         question_order++;
     }
 
-    public void setting_again(){
+    public void setting_again(){//for setting after clicking resurvey button
         question_order=1;
         order_number.setText("(1/3)");
         each_question.setText("Which residential space\ndo you want to style?");

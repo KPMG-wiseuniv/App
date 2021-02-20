@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+//payment after cart, just UX/UI
+
 public class PaymentActivity extends AppCompatActivity {
     TextView item_charge, total_payment;
     @Override

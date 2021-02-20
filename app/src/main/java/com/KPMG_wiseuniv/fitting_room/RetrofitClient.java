@@ -9,6 +9,8 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+//for setting Retrofit
+
 public class RetrofitClient {
     private static final String BASE_URL="api url";
 

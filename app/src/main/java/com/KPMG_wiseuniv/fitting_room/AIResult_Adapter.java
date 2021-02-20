@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+//RecyclerView Adapter contains list of furniture that suits for AI model's result
 public class AIResult_Adapter extends RecyclerView.Adapter {
     ArrayList<Imgdata> data;
     public static Context context;
@@ -21,7 +22,7 @@ public class AIResult_Adapter extends RecyclerView.Adapter {
         this.data=data;
         this.context=context;
     }
-    static final class AIResult_ViewHolder extends RecyclerView.ViewHolder{
+    static final class AIResult_ViewHolder extends RecyclerView.ViewHolder{//viewholder for AIResult_Adapter
         ImageView img;
         TextView price;
         public AIResult_ViewHolder(@NonNull View itemView) {

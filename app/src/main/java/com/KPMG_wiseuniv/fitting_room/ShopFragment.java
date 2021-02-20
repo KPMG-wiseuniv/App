@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//fragment for cart, just UX/UI
+
 public class ShopFragment extends Fragment {
     ConditionSurveyActivity activity;
     MainActivity mainActivity;
@@ -52,7 +54,7 @@ public class ShopFragment extends Fragment {
 
         return v;
     }
-    public void setting_view(View v){
+    public void setting_view(View v){//for inflate and basic setting
         cart_recyclerview=v.findViewById(R.id.cart_recyclerview);
         cart_totalprice=v.findViewById(R.id.cart_totalprice);
         payment_btn=v.findViewById(R.id.payment_btn);
@@ -68,7 +70,7 @@ public class ShopFragment extends Fragment {
         });
     }
 
-    public void setting_cart_item(){
+    public void setting_cart_item(){//setting cart item
         data=new ArrayList<>();
 //        data.add(new Cart_Item("First Product", "$100", Float.parseFloat("100")));
 //        data.add(new Cart_Item("Second Product", "$200", Float.parseFloat("200")));
@@ -77,7 +79,7 @@ public class ShopFragment extends Fragment {
         cart_totalprice.setText("$"+total);
         mainActivity.setting_cartcount(data.size());
     }
-    public void setting_recyclerview(){
+    public void setting_recyclerview(){//setting recyclerview
 
         cart_adapter=new Cart_Adapter(data, mainActivity);
         cart_recyclerview.setLayoutManager(new LinearLayoutManager(mainActivity));

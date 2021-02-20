@@ -14,6 +14,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+//RecyclerView Adapter contains list of furniture that suits for survey's result
+
 public class MyResult_Adapter extends RecyclerView.Adapter {
     ArrayList<Imgdata> data;
     public static Context context;

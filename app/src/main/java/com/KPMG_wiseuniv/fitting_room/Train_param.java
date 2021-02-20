@@ -1,5 +1,7 @@
 package com.KPMG_wiseuniv.fitting_room;
 
+//for sending to server that chosen furniture category and between Function and Design with Room image
+
 public class Train_param {
     String Furniture;
     String FD;

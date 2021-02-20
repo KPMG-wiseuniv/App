@@ -9,6 +9,8 @@ import android.view.WindowManager;
 
 import static android.os.SystemClock.sleep;
 
+//for containing Picture_choose_Fragment and Picture_train_Fragment
+
 public class PictureActivity extends AppCompatActivity {
     Picture_choose_Fragment choose_fragment;
     Picture_train_Fragment train_fragment;
@@ -24,13 +26,13 @@ public class PictureActivity extends AppCompatActivity {
         setting_fragment();
     }
 
-    public void setting_fragment(){
+    public void setting_fragment(){//setting fragment
         choose_fragment=new Picture_choose_Fragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.picturelayout_container, choose_fragment).commit();
             }
 
-    public void training_image(){
+    public void training_image(){//after upload image successfully, turn to train page
         sleep(500);
         getSupportFragmentManager().beginTransaction().hide(choose_fragment).commit();
         train_fragment=new Picture_train_Fragment();

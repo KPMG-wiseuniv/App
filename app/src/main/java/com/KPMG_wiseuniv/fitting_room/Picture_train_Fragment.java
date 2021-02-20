@@ -28,6 +28,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//fragment for sending uploaded image to server and getting AI result from server
+
 public class Picture_train_Fragment extends Fragment {
     PictureActivity pictureActivity;
     ManageFurniture alltrain;
@@ -58,7 +60,7 @@ public class Picture_train_Fragment extends Fragment {
 
         return v;
     }
-    public void uploadImage(){
+    public void uploadImage(){//this is for sending image to server and getting result from server
         RetrofitAPI myAPI=RetrofitClient.getApiService();
         String imagepath=null;
 //        if(pictureActivity.select==0){
@@ -73,21 +75,21 @@ public class Picture_train_Fragment extends Fragment {
         RequestBody requestFile=RequestBody.create(MediaType.parse("image/*"), file);
         String imgname=getRandomStr();
         imgname="train_"+imgname+".jpg";
-        MultipartBody.Part body=MultipartBody.Part.createFormData("image", imgname, requestFile);
+        MultipartBody.Part body=MultipartBody.Part.createFormData("image", imgname, requestFile);//for sending image to server, make MultipartBody.Part
         ArrayList<Furniture> now_total=ManageFurniture.getInstance().getTotal_furniture();
-        Furniture now_furniture=now_total.get(now_total.size()-1);
-        Train_param param=new Train_param(now_furniture.getTh_cat(), now_furniture.getFunction());
-        Call<Void> send=myAPI.send_img(body, imgname, param.getFurniture(), param.getFD());
-        send.enqueue(new Callback<Void>() {
+        Furniture now_furniture=now_total.get(now_total.size()-1);//last history of survey
+        Train_param param=new Train_param(now_furniture.getTh_cat(), now_furniture.getFunction());//sending furniture category and user's choice result between function and design
+        Call<Void> send=myAPI.send_img(body, imgname, param.getFurniture(), param.getFD());//Image sending API,
+        send.enqueue(new Callback<Void>() {                                            //also sending furniture category and user's choice result between function and design
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                if(response.isSuccessful()){
+                if(response.isSuccessful()){//after sending image successfully
                     System.out.println("image send success");
-                    Call<result> result=myAPI.get_result();
+                    Call<result> result=myAPI.get_result();//for getting AI result from server
                     result.enqueue(new Callback<com.KPMG_wiseuniv.fitting_room.result>() {
                         @Override
                         public void onResponse(Call<com.KPMG_wiseuniv.fitting_room.result> call, Response<com.KPMG_wiseuniv.fitting_room.result> response) {
-                            if(response.isSuccessful()){
+                            if(response.isSuccessful()){//when getting AI result, interior, color, detail of furniture successfully
                                 result res=response.body();
                                 Intent intent=new Intent(pictureActivity, ResultActivity.class);
                                 intent.putExtra("AIinterior", res.getInterior());
@@ -122,7 +124,7 @@ public class Picture_train_Fragment extends Fragment {
             }
         });
     }
-    // uri 절대경로 가져오기
+    // getting absolute path from Uri
     public String getPath(Uri uri){
 
         String filePath;
@@ -137,8 +139,8 @@ public class Picture_train_Fragment extends Fragment {
         return filePath;
     }
 
-    public String getRandomStr(){
-        char[] tmp=new char[9];
+    public String getRandomStr(){//make name of image sending to server
+        char[] tmp=new char[9];//'train_'+random 9 characters 0~9,A~Z
         for(int i=0; i<tmp.length; i++){
             int div=(int)Math.floor(Math.random()*2);
             if(div==0){
