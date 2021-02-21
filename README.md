@@ -1,6 +1,7 @@
 # Fitting Room by 슬기로운 대학생활
 안녕하십니까, 
-저희는 COVID-19 이후 ‘인테리어 모바일 커머스 시장’이 급속도로 성장하고 있는 가운데, AI 기술을 활용한 인테리어 상품 추천 플랫폼 ‘Fitting Room’을 선보이고자 하는 ‘슬기로운 대학생활’ 팀입니다. 
+저희는 COVID-19 이후 ‘인테리어 모바일 커머스 시장’이 급속도로 성장하고 있는 가운데, 
+AI 기술을 활용한 인테리어 상품 추천 플랫폼 ‘Fitting Room’을 선보이고자 하는 ‘슬기로운 대학생활’ 팀입니다. 
 ![슬기로운대학생활2](https://user-images.githubusercontent.com/78267876/108618219-8959a200-745f-11eb-8561-36f777985df7.jpg)
 ![슬기로운대학생활_프로토타입_업로드용](https://user-images.githubusercontent.com/78267876/108618017-eeac9380-745d-11eb-9541-fc04be86f74f.gif)
 
