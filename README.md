@@ -2,6 +2,7 @@
 안녕하십니까, 
 저희는 COVID-19 이후 ‘인테리어 모바일 커머스 시장’이 급속도로 성장하고 있는 가운데, AI 기술을 활용한 인테리어 상품 추천 플랫폼 ‘Fitting Room’을 선보이고자 하는 ‘슬기로운 대학생활’ 팀입니다. 
 ![그림1](https://user-images.githubusercontent.com/78267876/108617930-675f2000-745d-11eb-94c1-6b1a66269ab8.jpg)
+![슬기로운대학생활_프로토타입_업로드용](https://user-images.githubusercontent.com/78267876/108618017-eeac9380-745d-11eb-9541-fc04be86f74f.gif)
 
 # Project Background
 COVID-19가 전 세계적인 영향을 미치며, 자유로운 외부 활동이 거의 불가능해지는 현상이 지구 전체에 발생하였습니다. 
