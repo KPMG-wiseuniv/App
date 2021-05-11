@@ -206,8 +206,8 @@ public class Picture_choose_Fragment extends Fragment {
 //                        e.printStackTrace();
 //                    }
 //                }
-                File file=new File(mCurrentPhtoPath);
-                selected_img=Uri.fromFile(file);
+//                 File file=new File(mCurrentPhtoPath);
+//                 selected_img=Uri.fromFile(file);
                 if(selected_img!=null){
                     which=1;
                     setting_change();
